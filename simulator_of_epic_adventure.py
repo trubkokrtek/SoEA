@@ -24,7 +24,14 @@ if answer == "Utecu":
     print("V petrově kapse.")
     #? pd.play(organ)
 elif answer == "Podivam se na to":
-    #? pd.play("brave_music")
+    #? pd.play(brave_music)
     print("Zjistíš, že uprostřed pentagramu se nacházé server s nápisem \"Petrova kapsa\"")
-    #? pd.play("inteligent_music")
+    #? pd.play(inteligent_music)
     print("Právě ti došlo, že k útěku potrebuješ legendární kouzelnou kartu")
+else:
+    print("Na místě jsi zkameněl strachy")
+    #? pd.play(scary_music)
+    print("Najednou ucítíš, že ti kamenní nohy, podíváš se na ně a zjistíš, že ti kamenní doopravdy")
+    #? pd.play(game_over_theme)
+    print("Kdybys nenapsal nesmyslnou odpověď na první volbu, nic by se ti nestalo")
+    print("Umřel jsi a to hra ještě nazačala, tys to vyved!")
