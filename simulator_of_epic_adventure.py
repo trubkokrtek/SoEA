@@ -39,7 +39,7 @@ if answer == "Utecu":
     print("Užij si hru!")
     #? pd.play(start_game)
 
-elif answer == "Podivam se na to":
+elif answer == "Podivam se na pentagram zblizka":
     #? pd.play(brave_music)
     print("Zjistíš, že uprostřed pentagramu se nachází trezor s nápisem \"Petrova kapsa\"")
     #? pd.play(inteligent_music)
