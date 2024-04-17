@@ -18,9 +18,11 @@ os.system("CLS")
 print("""Ahoj, právě ses probudil na TULce.
       Nevíš jak jsi se sem dostal, ale vedle tebe na zemi je nakresleno něco jako pentagram a v každém kruhu je počítač, kromě jednoho""")
 #? pd.play(scary_sound)
-print("Co udeláš? Utečeš, nebo se na to podíváš zblízka")
-answer = input("Utecu/Podivam se na to: ")
-if answer == "Utecu":
+print("""Co udeláš? Utečeš, nebo se na to podíváš zblízka:
+        1 - Uteču
+        2 - Podívám se na ten pentagram zblízka""")
+answer = input("Co tedy uděláš? 1 / 2: ")
+if answer == 1:
     print("Vyběhneš z místnosti s pentagramem k nelblišším dveřím, ale zjistíš, že dveře jsou zamčené.")
     print("Podíváš se blíže na zámek dveří a zjistíš, že k jejich otevření je potřeba legendární kouzelná karta, kterou lze nalést jen na jediném místě.")
     #? pd.play(dark_sourprise_sound)
@@ -39,7 +41,7 @@ if answer == "Utecu":
     print("Užij si hru!")
     #? pd.play(start_game)
 
-elif answer == "Podivam se na pentagram zblizka":
+elif answer == 2:
     #? pd.play(brave_music)
     print("Zjistíš, že uprostřed pentagramu se nachází trezor s nápisem \"Petrova kapsa\"")
     #? pd.play(inteligent_music)
