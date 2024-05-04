@@ -1,11 +1,13 @@
 import pydub as pd
+from pydub import playback
 import os
 import time as t
 os.system("Color a")
 os.system("CLS")
+#? play = playback._play_with_simpleaudio()
 
 def gameover():
-    #? gameover_theme = pd.AudioSegment.from_mp3("")
+    #? gameover_theme = pd.AudioSegment.from_wav("")
     print(""" 
     ######################################################
     #                                                    #
@@ -40,6 +42,7 @@ print("""
   | || |  | |_| | |_) |   < (_) |   <| |  | ||  __/   < 
   |_||_|   \__,_|_.__/|_|\_\___/|_|\_\_|   \__\___|_|\_\ """)
 t.sleep(5)
+os.system("CLS")
 print("""
                                 _                       
  _ __  _ __ ___  ___  ___ _ __ | |_ ___                 
@@ -48,26 +51,28 @@ print("""
 | .__/|_|  \___||___/\___|_| |_|\__|___(_|_|_)          
 |_|       """)
 t.sleep(5)
+os.system("CLS")
 print("""
  ____        _____    _        _____ _   _ _            
 / ___|  ___ | ____|  / \   _  |_   _| | | | |           
 \___ \ / _ \|  _|   / _ \ (_)   | | | | | | |           
  ___) | (_) | |___ / ___ \ _    | | | |_| | |___        
-|____/ \___/|_____/_/   \_(_)   |_|  \___/|_____|""")
+|____/ \___/|_____/_/   \_(_)   |_|  \___/|_____|\n\n""")
 
 print("""Ahoj, právě ses probudil na TULce.
       Nevíš jak jsi se sem dostal, ale vedle tebe na zemi je nakresleno něco jako pentagram a v každém kruhu je počítač, kromě jednoho""")
-#? pd.play(scary_sound)
-print("""Co udeláš? Utečeš, nebo se na to podíváš zblízka:
+#? play(scary_sound)
+print("""Co udeláš? Utečeš, podíváš se na to zblízka, nebo zkaměníš strachy na místě:
         1 - Uteču
-        2 - Podívám se na ten pentagram zblízka""")
-answer = input("Co tedy uděláš? 1 / 2: ")
+        2 - Podívám se na ten pentagram zblízka
+        3 - Zkameníš strachy na místě""")
+answer = input("Co tedy uděláš? 1 / 2 / 3: ")
 if answer == '1':
     print("Vyběhneš z místnosti s pentagramem k nelblišším dveřím, ale zjistíš, že dveře jsou zamčené.")
     print("Podíváš se blíže na zámek dveří a zjistíš, že k jejich otevření je potřeba legendární kouzelná karta, kterou lze nalést jen na jediném místě.")
-    #? pd.play(dark_sourprise_sound)
+    #? play(dark_sourprise_sound)
     print("V Petrově kapse.")
-    #? pd.play(organ)
+    #? play(organ)
     t.sleep(20)
     print("Rozhodneš se, že podíváš na ten pentagram a ještě k tomu jsi vypotřeboval 20 sekund svého času.")
     print("Když se podíváš na ten pentagram, zjistíš, že uprostřed se nachází trezor s nápisem \"Petrova kapsa\".")
@@ -79,12 +84,12 @@ if answer == '1':
     print("Zjistil si, že potřebuješ najít kabel, přihlašovací údaje, instalační soubory pro LabView, nějaký další počítač a pojistku.")
     print("Hodně štěstí při hraní této hry. Doufám, že ho nebudeš potřebovat.")
     print("Užij si hru!")
-    #? pd.play(start_game)
+    #? play(start_game)
 
 elif answer == '2':
-    #? pd.play(brave_music)
+    #? play(brave_music)
     print("Zjistíš, že uprostřed pentagramu se nachází trezor s nápisem \"Petrova kapsa\"")
-    #? pd.play(inteligent_music)
+    #? play(inteligent_music)
     print("Právě ti došlo, že k útěku potrebuješ legendární kouzelnou kartu")
     print("Při ještě jedné bližší prohlídce zjistíš, že každému ze 4 počítaču v cípech pentagramu chybí určité části. A jeden počítač chybí kompletně.")
     print("Mimo jiné zjistíš že do trezoru vedou 4 kabely od 4 cípů pentagramu. Jeden kabel chybí.")
@@ -94,14 +99,56 @@ elif answer == '2':
     print("Zjistil si, že potřebuješ najít kabel, přihlašovací údaje, instalační soubory pro LabView, nějaký další počítač a pojistku.")
     print("Hodně štěstí při hraní této hry. Doufám, že ho nebudeš potřebovat.")
     print("Užij si hru!")
-    #? pd.play(start_game)
+    #? play(start_game)
 
 
 else:
     print("Na místě jsi zkameněl strachy")
-    #? pd.play(scary_music)
+    #? play(scary_music)
     print("Najednou ucítíš, že ti kamenní nohy, podíváš se na ně a zjistíš, že ti kamenní doopravdy")
-    #? pd.play(game_over_theme)
+    #? play(game_over_theme)
     print("Kdybys nenapsal nesmyslnou odpověď na první volbu, nic by se ti nestalo")
     print("Umřel jsi a to hra ještě nazačala, tys to vyved!")
     gameover()
+
+endings = ["", "", "", "", ""]
+while True:
+    if "" not in endings:
+        break
+    print("Co se rozhodneš hledat?")
+    print("""
+            1 - Kabel
+            2 - Přihlašovací údaje
+            3 - Instalační soubory pro LV
+            4 - Nějaké jiný počítač
+            5 - Pojistku""")
+    try:
+        search = int(input(""))
+    except ValueError:
+        print("Zkus hledat něco validního!")
+        #? play(error_sound)
+        continue
+    match search:
+        case 1:
+            if endings[0] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+        case 2:
+            if endings[1] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+        case 3:
+            if endings[2] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+        case 4:
+            if endings[3] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+        case 5:
+            if endings[4] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+        case _:
+            print("Zkus hledat něco validního!")
+            #? play(error_sound)
