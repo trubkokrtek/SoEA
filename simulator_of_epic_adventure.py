@@ -8,6 +8,7 @@ os.system("CLS")
 
 def gameover():
     #? gameover_theme = pd.AudioSegment.from_wav("")
+    #? play(gameover_theme)
     print(""" 
     ######################################################
     #                                                    #
@@ -106,7 +107,6 @@ else:
     print("Na místě jsi zkameněl strachy")
     #? play(scary_music)
     print("Najednou ucítíš, že ti kamenní nohy, podíváš se na ně a zjistíš, že ti kamenní doopravdy")
-    #? play(game_over_theme)
     print("Kdybys nenapsal nesmyslnou odpověď na první volbu, nic by se ti nestalo")
     print("Umřel jsi a to hra ještě nazačala, tys to vyved!")
     gameover()
@@ -135,6 +135,32 @@ while True:
             if endings[0] != "":
                 print("Tento předmět jsi už našel!")
                 #? play(error_sound)
+            #? play(inteligent_music)
+            print("Přemýšlíš, kde by jsi mohl najít kabel, který potřebuješ k připojení toho počítače")
+            t.sleep(3)
+            #? play(cink)
+            print("""   
+                 _____  
+               .'     `.
+              /         \
+             |           | 
+             '.  +^^^+  .'
+               `. \./ .'
+                 |_|_|  
+                 (___)    
+                 (___)
+                 `---' """)
+            t.sleep(3)
+            os.system("CLS")
+            print("Možná bys mohl použít Honzův kabel ze skříně!")
+            print("Podíváš se na konektory kabelů a zjistíš, že by ten kabel měl sedět")
+            print("No, jo, ale jak ho dostat ze skříně?")
+            print("Rozhodneš se rovnou vydat hledat ten kabel, ale kde ho hledat, jsi sice na univerzitě, ale to je tak všechno co víš")
+            print("""Rozhlédneš se kolem sebe a vidíš tři možné cesty:
+                      1 - Schody vedoucí o patro níž
+                      2 - Výtah
+                      3 - Chodba vedoucí za roh""")
+            print("Kterou z nich se vydáš?")
         case 2:
             if endings[1] != "":
                 print("Tento předmět jsi už našel!")
