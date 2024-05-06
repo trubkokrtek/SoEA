@@ -124,6 +124,8 @@ while True:
             5 - Pojistku""")
     try:
         search = int(input(""))
+        if search not in range(1,5):
+            raise ValueError
     except ValueError:
         print("Zkus hledat něco validního!")
         #? play(error_sound)
@@ -150,5 +152,4 @@ while True:
                 print("Tento předmět jsi už našel!")
                 #? play(error_sound)
         case _:
-            print("Zkus hledat něco validního!")
-            #? play(error_sound)
+            pass
