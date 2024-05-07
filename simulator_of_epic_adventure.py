@@ -7,6 +7,7 @@ os.system("CLS")
 #? play = playback._play_with_simpleaudio()
 
 def gameover():
+    t.sleep(5)
     #? gameover_theme = pd.AudioSegment.from_wav("")
     #? play(gameover_theme)
     print(""" 
@@ -24,6 +25,7 @@ def gameover():
     #                                                    #
     ######################################################
     """)
+    quit()
 
 #? music department
 #? scary_sound = pd.AudioSegment.from_mp3("./scary.mp3")
@@ -59,6 +61,7 @@ print("""
 \___ \ / _ \|  _|   / _ \ (_)   | | | | | | |           
  ___) | (_) | |___ / ___ \ _    | | | |_| | |___        
 |____/ \___/|_____/_/   \_(_)   |_|  \___/|_____|\n\n""")
+t.sleep(5)
 
 print("""Ahoj, právě ses probudil na TULce.
       Nevíš jak jsi se sem dostal, ale vedle tebe na zemi je nakresleno něco jako pentagram a v každém kruhu je počítač, kromě jednoho""")
@@ -89,6 +92,7 @@ if answer == '1':
 
 elif answer == '2':
     #? play(brave_music)
+    #? play(holy)
     print("Zjistíš, že uprostřed pentagramu se nachází trezor s nápisem \"Petrova kapsa\"")
     #? play(inteligent_music)
     print("Právě ti došlo, že k útěku potrebuješ legendární kouzelnou kartu")
@@ -142,7 +146,7 @@ while True:
             print("""   
                  _____  
                .'     `.
-              /         \
+              /         \\
              |           | 
              '.  +^^^+  .'
                `. \./ .'
@@ -160,7 +164,144 @@ while True:
                       1 - Schody vedoucí o patro níž
                       2 - Výtah
                       3 - Chodba vedoucí za roh""")
-            print("Kterou z nich se vydáš?")
+            answer = input("Kterou z nich se vydáš? ")
+            if answer == '1':
+                print("Rozhodneš se, že se vydáš dolů po schodech.")
+                print("Během chůze ze schodů, ti podklouzne noha a už padáš ze schodů, dopadneš na tvrdou podlahu a umíráš.")
+                gameover()
+            elif answer == '2':
+                print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
+                print("Zavřeš oči a zmáčkneš náhodné tlačítko")
+                t.sleep(3)
+                #? play(cink)
+                print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
+                print("""Vidíš před sebou tři cesty:
+                            1 - Rovnou chodbu, dlouhou tak, že ani nevidíš kam vede
+                            2 - Schody vedoucí o patro výš
+                            3 - Chodbu vedoucí za roh""")
+                answer = input("Kam se vydáš? ")
+                if answer == '1':
+                    print("Jdeš dlouhou chodbou, zkoušíš postupně otevírat dveře")
+                    print("Když dojdeš na konec chodby najdeš tam páčidlo a řekneš si že by se ti mohlo hodit, tak si ho dáš do kapsy")
+                    print("A kam teď?")
+                    print("Rozmyslíš se, že půjdeš tou chodbou, která vede za roh.")
+                    print("A světe div se, jen tam další rozcestí")
+                    print("""Zase máš na výběr ze tří cest: 
+                                1 - Výtah
+                                2 - Místnost s otevřenými dveřmi, přímo před tebou
+                                3 - Schody vedoucí o patro výš""")
+                    answer = input("Kam se vydáš? ")
+                    if answer == '1':
+                        print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
+                        #? play(scary_music)
+                        print("Výtah se rozjede, ale najednou se zastaví.")
+                        print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
+                        gameover()
+                    elif answer == '2':
+                        print("Řekneš si, že se ti do schodů nechce, jsi na to moc líný.")
+                        print("Takže se rozhodneš podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
+                        print("Vstoupíš do místnosti a vytáhneš páčidlo a vypáčíš si cestu do skříně a opravdu tam je.")
+                        #? play(holy)
+                        print("Posvátný honzův kabel")
+                        endings[0] = "crowbar"
+                        print("Vracíš se do místnosti s pentagramem.")
+                    elif answer == '3':
+                        print("Rozhodneš se tedy podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
+                        print("Vstoupíš do místnosti a vytáhneš páčidlo a vypáčíš si cestu do skříně a opravdu tam je.")
+                        #? play(holy)
+                        print("Posvátný honzův kabel")
+                        endings[0] = "crowbar"
+                        print("Vracíš se do místnosti s pentagramem.")
+                    else:
+                        print("Radši se vrátíš zpět po svých stopách.")
+                        #? play(error_sound)
+                        continue
+                elif answer == '2':
+                    print("Jdeš nahoru po schodech a v tom druhém patře zahlédneš místnost s pentagramem.")
+                    print("Ale najednou ti podklouzne noha a padáš obličejem ke schodům.")
+                    gameover()
+                elif answer == '3':
+                    print("Jdeš tou chodbou za roh, cestou zkoušíš otevřít různé dveře, ale žádne dveře nejdou otevřít.")
+                    print("A světe div se, jen tam další rozcestí")
+                    print("""Zase máš na výběr ze tří cest: 
+                                1 - Výtah
+                                2 - Místnost s otevřenými dveřmi, přímo před tebou
+                                3 - Schody vedoucí o patro výš""")
+                    answer = input("Kam se vydáš? ")
+                    if answer == '1':
+                        print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
+                        #? play(scary_music)
+                        print("Výtah se rozjede, ale najednou se zastaví.")
+                        print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
+                        gameover()
+                    elif answer == '2':
+                        print("Řekneš si, že se ti do schodů nechce, jsi na to moc líný.")
+                        print("Takže se rozhodneš podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
+                        print("Vstoupíš do místnosti, zkusíš otevřít tu skříň, ale je zamčená")
+                        print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
+                        print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
+                        #? play(holy)
+                        print("Posvátný honzův kabel")
+                        endings[0] = "key"
+                        print("Vracíš se do místnosti s pentagramem.")
+                    elif answer == '3':
+                        print("Rozhodneš se tedy podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
+                        print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
+                        print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
+                        #? play(holy)
+                        print("Posvátný honzův kabel")
+                        endings[0] = "key"
+                        print("Vracíš se do místnosti s pentagramem.")
+                    else:
+                        print("Radši se vrátíš zpět po svých stopách.")
+                        #? play(error_sound)
+                        continue
+                else:
+                    print("Radši se vrátíš zpět po svých stopách.")
+                    #? play(error_sound)
+                    continue
+            elif answer == '3':
+                print("Jdeš tou chodbou za roh, cestou zkoušíš otevřít různé dveře, ale žádne dveře nejdou otevřít.")
+                print("A světe div se, jen tam další rozcestí")
+                print("""Zase máš na výběr ze tří cest: 
+                            1 - Výtah
+                            2 - Místnost s otevřenými dveřmi, přímo před tebou
+                            3 - Schody vedoucí o patro výš""")
+                answer = input("Kam se vydáš? ")
+                if answer == '1':
+                    print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
+                    #? play(scary_music)
+                    print("Výtah se rozjede, ale najednou se zastaví.")
+                    print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
+                    gameover()
+                elif answer == '2':
+                    print("Jdeš dolů ze schodů a v otevřené místnosti zahlédneš něco, co by mohla být skříň ve které by mohl být honzův kabel")
+                    print("Takže se rozhodneš podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
+                    print("Vstoupíš do místnosti, zkusíš otevřít tu skříň, ale je zamčená")
+                    print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
+                    print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
+                    #? play(holy)
+                    print("Posvátný honzův kabel")
+                    endings[0] = "key"
+                    print("Vracíš se do místnosti s pentagramem.")
+                elif answer == '3':
+                    print("Rozhodneš se tedy podívat do místnosti, nic v ní na první pohled nevidíš, ale rozhodneš se tam vstoupit.")
+                    print("Najednou uslyšíš zapraskání a bum, propadne se s tebou podlaha.")
+                    print("Propadl jsi se o patro níž a spadnul na skříň, která se tvým pádem otevřela")
+                    #? play(holy)
+                    print("Vypadl z ní honzův kabel")
+                    print("Ale ty bohužel umíráš na důsledky pádu.")
+                    gameover()
+                else:
+                    print("Radši se vrátíš zpět po svých stopách.")
+                    #? play(error_sound)
+                    continue
+            else:
+                    print("Radši se vrátíš zpět po svých stopách.")
+                    #? play(error_sound)
+                    continue
+                
+            
         case 2:
             if endings[1] != "":
                 print("Tento předmět jsi už našel!")
