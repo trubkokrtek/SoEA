@@ -4,11 +4,11 @@ import os
 import time as t
 os.system("Color a")
 os.system("CLS")
-#? play = playback._play_with_simpleaudio()
+play = playback._play_with_simpleaudio()
 
 def gameover():
     t.sleep(5)
-    #? gameover_theme = pd.AudioSegment.from_wav("")
+    #? gameover_theme = pd.AudioSegment.from_wav("./music/gameover.wav")
     #? play(gameover_theme)
     print(""" 
     ######################################################
@@ -25,10 +25,17 @@ def gameover():
     #                                                    #
     ######################################################
     """)
+    t.sleep(3)
     quit()
 
 #? music department
-#? scary_sound = pd.AudioSegment.from_mp3("./scary.mp3")
+#? scary_sound = pd.AudioSegment.from_wav("./music/scary.wav")
+#? error_sound = pd.AudioSegment.from_wav("./music/error.wav")
+#? intelligent_music = pd.AudioSegment.from_wav("./music/intelligent.wav")
+#? brave_music = pd.AudioSegment.from_wav("./music/brave.wav")
+#? holy = pd.AudioSegment.from_wav("./music/holy.wav")
+#? organ = pd.AudioSegment.from_wav("./music/organ.wav")
+#? start_game = pd.AudioSegment.from_wav("./music/start.wav")
 
 #TODO 5 artefaktů k otevření petrovy kapsy, k získání karty ke kouzelným dveřím. Otevírání ve tvaru pentagramu. 5 PC (každému chybí něco jiného)
 #TODO Artefakty: Honzův kabel, instalační soubory LabView, Pepovu raketu (a naistalovat naní win11), pojistku, přihlašovací údaje k novým PC na TULce
@@ -74,7 +81,7 @@ answer = input("Co tedy uděláš? 1 / 2 / 3: ")
 if answer == '1':
     print("Vyběhneš z místnosti s pentagramem k nelblišším dveřím, ale zjistíš, že dveře jsou zamčené.")
     print("Podíváš se blíže na zámek dveří a zjistíš, že k jejich otevření je potřeba legendární kouzelná karta, kterou lze nalést jen na jediném místě.")
-    #? play(dark_sourprise_sound)
+    #? play(holy)
     print("V Petrově kapse.")
     #? play(organ)
     t.sleep(20)
@@ -127,8 +134,8 @@ while True:
             4 - Nějaké jiný počítač
             5 - Pojistku""")
     try:
-        search = int(input(""))
-        if search not in range(1,5):
+        search = int(input("Po čem se tedy půjdeš podívat? "))
+        if search not in range(1,6):
             raise ValueError
     except ValueError:
         print("Zkus hledat něco validního!")
@@ -421,6 +428,9 @@ while True:
                                 endings[1] = "bad"
                                 print("""jan.novak@tul.cz
                                         Heslo123""")
+                                print("Rovnou je vyzskoušíš na počítači na katedře.")
+                                t.sleep(2)
+                                print("Po chvíli se počítač doopravdy odemkne.")
                                 print("To znamená, že si našel přihlašovací údaje k tomu počítači")
                                 room = "return"
                                 break
@@ -477,6 +487,9 @@ while True:
                             endings[1] = "good"
                             print(""".\\ul
                                     123456""")
+                            print("Rovnou je vyzskoušíš na počítači na katedře.")
+                            t.sleep(2)
+                            print("Po chvíli se počítač doopravdy odemkne.")
                             print("To znamená, že si našel přihlašovací údaje k tomu počítači")
                             room = "return"
                             break
@@ -540,7 +553,8 @@ while True:
 
             else:
                 print("Radši budu hledat něco jiného.")
-                #? play(error_sound) 
+                #? play(error_sound)
+                continue 
         case 3:
             if endings[2] != "":
                 print("Tento předmět jsi už našel!")
@@ -556,5 +570,180 @@ while True:
                 print("Tento předmět jsi už našel!")
                 #? play(error_sound)
                 continue
+            #? play(inteligent_music)
+            print("Přemýšlíš, kde by jsi mohl najít pojistku, který potřebuješ k připojení toho počítače")
+            t.sleep(3)
+            #? play(cink)
+            print("""   
+                 _____  
+               .'     `.
+              /         \\
+             |           | 
+             '.  +^^^+  .'
+               `. \./ .'
+                 |_|_|  
+                 (___)    
+                 (___)
+                 `---' """)
+            t.sleep(3)
+            os.system("CLS")
+            print("Nějaké pojistka by mohla být ve sklepě.")
+            print("""Rozhlédneš se kolem sebe a vidíš tři možné cesty:
+                      1 - Schody úplně dolů
+                      2 - Výtah
+                      3 - Volný pád""")
+            answer = input("Kterou z nich se vydáš? ")
+            if answer == '1':
+                #? play(scary_sound)
+                print("Seběhneš schody o pár pater níž.")
+                #? play(brave_music)
+                print("Cestou kolem sebe slyšíš spostu strašidelných zvuků, ale ty se jimi nenecháš zastrašit.")
+                print("Když už níže se po schodech nedostaneš, rozhlédneš se kolem.")
+            elif answer == '2': 
+                print("Vejdeš do výtahu a rovnou zmáčkneš tlačítko s -1.")
+                t.sleep(6)
+                #? play(cink)
+                print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
+
+            elif answer == '3':
+                print("Zvolil jsi cestu volný pád")
+                print("Jdeš k nejbližšímu oknu a skočíš z něj.")
+                print("Během pádu si uvědomíš, že jsi udělal něco špatně.")
+                print("Co jsi čekal, že se stane, když zvolíš tuto cestu?!")
+                gameover()
+
+            else:
+                print("Radši budu hledat něco jiného.")
+                #? play(error_sound)
+                continue 
+            print("""Kolem tebe jsou tři cesty: 
+                            1 - Dlouhá chodba doleva
+                            2 - Dlouhá chodba doprava
+                            3 - Schody vedoucí o patro výš""")
+            answer = input("Kam to tedy bude? ")
+            if answer == '1':
+                print("""Jdeš levou chodbou, ale cestou jsi viděl tři místnosti s označením:
+             zeeeeee-
+            z$$$$$$"
+           d$$$$$$"
+          d$$$$$P
+         d$$$$$P
+        $$$$$$"
+      .$$$$$$"
+     .$$$$$$"
+    4$$$$$$$$$$$$$"
+   z$$$$$$$$$$$$$"
+   \"\"\"\"\"\"\"3$$$$$"
+         z$$$$P
+        d$$$$"
+      .$$$$$"
+     z$$$$$"
+    z$$$$P
+   d$$$$$$$$$$"
+  *******$$$"
+       .$$$"
+      .$$"
+     4$P"
+    z$"
+   zP
+  z"
+ /
+^""")
+            
+                room = input("Do které místnosti se vydáš 1/2/3? ")
+                if room == '1':
+                    print("Hned, jakmile vstoupíš do místnosti se omylem dotkneš kabelu.")
+                    print("A naneštěstí pro tebe je pod proudem.")
+                    print("Takže nastává exitus elektrickým proudem.")
+                    gameover()
+
+                elif room == '2':
+                    print("Tato místnost je zamčená, ale snažíš se dostat dovnitř hrubou silou")
+                    #? play(scary_sound)
+                    print("Ale uslyšíš nějaké strašidelné zvuky a jakoby něco padalo.")
+                    print("Strachem se radši vrátíš do místnosti s pentagramem.")
+                    continue
+
+                elif room == '3':
+                    print("Vstoupíš do místnosti, porozhlédneš se po pojistce, ale nemůžeš ji najít.")
+                    print("Hledáš, stále hledáš, až ti zbyde poslední místo kam jsi se nepodíval a ty jen doufáš, že tam ta pojistka je.")
+                    #? play(holy)
+                    t.sleep(2)
+                    print("Otevřeš tu krabičku a opravdu tam ta pojistka je.")
+                    print("Těsně před tím, než jsi to vzdal si ji našel a už běžíš zpět do místnosti s pentagramem.")
+                    continue
+
+                else:
+                    print("Radši budu hledat něco jiného.")
+                    #? play(error_sound)
+                    continue 
+            elif answer == '2':
+                answer = input("Kam to tedy bude? ")
+                print("""Jdeš levou chodbou, ale cestou jsi viděl tři místnosti s označením:
+             zeeeeee-
+            z$$$$$$"
+           d$$$$$$"
+          d$$$$$P
+         d$$$$$P
+        $$$$$$"
+      .$$$$$$"
+     .$$$$$$"
+    4$$$$$$$$$$$$$"
+   z$$$$$$$$$$$$$"
+   \"\"\"\"\"\"\"3$$$$$"
+         z$$$$P
+        d$$$$"
+      .$$$$$"
+     z$$$$$"
+    z$$$$P
+   d$$$$$$$$$$"
+  *******$$$"
+       .$$$"
+      .$$"
+     4$P"
+    z$"
+   zP
+  z"
+ /
+^""")
+            
+                room = input("Do které místnosti se vydáš 1/2/3? ")
+                if room == '2':
+                    print("Hned, jakmile vstoupíš do místnosti se omylem dotkneš kabelu.")
+                    print("A naneštěstí pro tebe je pod proudem.")
+                    print("Takže nastává exitus elektrickým proudem.")
+                    gameover()
+
+                elif room == '3':
+                    print("Tato místnost je zamčená, ale snažíš se dostat dovnitř hrubou silou")
+                    #? play(scary_sound)
+                    print("Ale uslyšíš nějaké strašidelné zvuky a jakoby něco padalo.")
+                    print("Strachem se radši vrátíš do místnosti s pentagramem.")
+                    continue
+
+                elif room == '1':
+                    print("Vstoupíš do místnosti, porozhlédneš se po pojistce, ale nemůžeš ji najít.")
+                    print("Hledáš, stále hledáš, až ti zbyde poslední místo kam jsi se nepodíval a ty jen doufáš, že tam ta pojistka je.")
+                    #? play(holy)
+                    t.sleep(2)
+                    print("Otevřeš tu krabičku a opravdu tam ta pojistka není.")
+                    print("Takže kapituluješ a vracíš se zpět do místnosti s pentagramem s ocasem stažaným mezi tvýma nohama.")
+                    continue
+
+                else:
+                    print("Radši budu hledat něco jiného.")
+                    #? play(error_sound)
+                    continue 
+
+            elif answer == '3':
+                #? play(scary_sound)
+                print("Radši ses vrátil zpět nahoru, protože jsi se bál.")
+                continue
+
+            else:
+                print("Radši se vrátíš zpět po svých stopách.")
+                #? play(error_sound)
+                continue
+
         case _:
-            pass
+            continue
