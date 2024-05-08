@@ -386,7 +386,11 @@ while True:
                                 break
                             
                             case "AP301":
-                                print("Tato místnost je zamčená.")
+                                print("Vejdeš do místnosti, ale na tabuli je napsaný nějaký pseudokód.")
+                                t.sleep(3)
+                                print("Po chvíli přemýšlení ti dojde, že to není pseudokód, ale JavaScript.")
+                                print("Ale to už je pozdě, už ti to vypálilo oči a ty umíráš s posledním pohledem na JavaScript.")
+                                gameover()
                             
                             case "AP302":
                                 #? play(alarm)
@@ -487,7 +491,11 @@ while True:
                             print("Tato místnost je zamčená.")
 
                         case "AP317":
-                            print("Tato místnost je zamčená.")
+                            print("Vejdeš do místnosti, ale na tabuli je napsaný nějaký pseudokód.")
+                            t.sleep(3)
+                            print("Po chvíli přemýšlení ti dojde, že to není pseudokód, ale JavaScript.")
+                            print("Ale to už je pozdě, už ti to vypálilo oči a ty umíráš s posledním pohledem na JavaScript.")
+                            gameover()
 
                         case "AP318":
                             print("Tato místnost je zamčená.")
