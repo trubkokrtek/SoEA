@@ -29,21 +29,26 @@ def gameover():
     quit()
 
 #? music department
-#? scary_sound = pd.AudioSegment.from_wav("./music/scary.wav")
-#? error_sound = pd.AudioSegment.from_wav("./music/error.wav")
-#? intelligent_music = pd.AudioSegment.from_wav("./music/intelligent.wav")
-#? brave_music = pd.AudioSegment.from_wav("./music/brave.wav")
-#? holy = pd.AudioSegment.from_wav("./music/holy.wav")
-#? organ = pd.AudioSegment.from_wav("./music/organ.wav")
-#? start_game = pd.AudioSegment.from_wav("./music/start.wav")
-
+#? try: 
+    #? scary_sound = pd.AudioSegment.from_wav("./music/scary.wav")
+    #? error_sound = pd.AudioSegment.from_wav("./music/error.wav")
+    #? intelligent_music = pd.AudioSegment.from_wav("./music/intelligent.wav")
+    #? brave_music = pd.AudioSegment.from_wav("./music/brave.wav")
+    #? holy = pd.AudioSegment.from_wav("./music/holy.wav")
+    #? organ = pd.AudioSegment.from_wav("./music/organ.wav")
+    #? start_game = pd.AudioSegment.from_wav("./music/start.wav")
+    #? gunshots = pd.AudioSegment.from_wav("./music/gun.wav")
+#? except:
+    #? print("Nelze načíst hudbu, zkus to znovu, nebo použij verzi bez hudby")
+    #? quit()
 #TODO 5 artefaktů k otevření petrovy kapsy, k získání karty ke kouzelným dveřím. Otevírání ve tvaru pentagramu. 5 PC (každému chybí něco jiného)
 #TODO Artefakty: Honzův kabel, instalační soubory LabView, Pepovu raketu (a naistalovat naní win11), pojistku, přihlašovací údaje k novým PC na TULce
 #TODO good endings: probuzení ze snu
 #TODO bad endings: přejetí vlakem po vyjití z budovy
 #TODO items: Kafe / Honzovo kafe (nicked), tvoje zapomenuté USB
 #TODO LV: nasel jsi svoje stare USB se soubory (clickbait - corrupted)
-#TODO easter eggs: JS, SolidWorks
+#TODO easter eggs: JS, SolidWorks (Najman)
+#TODO secret ending: Tetris
 
 print("""
  _____           _     _         _         _       _    
@@ -73,7 +78,7 @@ t.sleep(5)
 print("""Ahoj, právě ses probudil na TULce.
       Nevíš jak jsi se sem dostal, ale vedle tebe na zemi je nakresleno něco jako pentagram a v každém kruhu je počítač, kromě jednoho""")
 #? play(scary_sound)
-print("""Co udeláš? Utečeš, podíváš se na to zblízka, nebo zkaměníš strachy na místě:
+print("""Co uděláš? Utečeš, podíváš se na to zblízka, nebo zkameníš strachy na místě:
         1 - Uteču
         2 - Podívám se na ten pentagram zblízka
         3 - Zkameníš strachy na místě""")
@@ -122,6 +127,7 @@ else:
     print("Umřel jsi a to hra ještě nazačala, tys to vyved!")
     gameover()
 
+t.sleep(5)
 endings = ["", "", "", "", ""]
 while True:
     if "" not in endings:
@@ -773,7 +779,103 @@ while True:
                       3 - Dlouhá chodba vpravo""")
             answer = input("Kterou z nich se vydáš? ")
             if answer == '1':
-                pass
+                print("Jdeš chodbou a cestou zkoušíš různé dveře.")
+                print("Otevřou se jenom dvoje. A na konci cesty je ještě výtah, další pootevřené dveře.")
+                print("Ještě tam jsou schody vedoucí dolů.")
+                print("""Takže máš na výběr:
+                            1 - První dveře
+                            2 - Druhé dveře
+                            3 - Poslední dveře
+                            4 - Výtah
+                            5 - Schody dolů""")
+                answer = input("Kam se tedy vydáš? ")
+                if answer == '1':
+                    print("Vstoupíš do místnosti a všimneš si někdo tu nechal zapnutý počítač.")
+                    print("Přisedneš k počítači a zjistíš, že někdo na něm necha zapnutý Euro Truck Simulator 2.")
+                    print("Ihned zapomeneš na potřebu svobody a rozhodneš si zahrát.")
+                    t.sleep(5)
+                    print("Po chvíli tě to přestane bavit, akorát to má menší problém.")
+                    print("Ty jsi zestárl nejméně o 90 let")
+                    print("No jo no, ty zakázky nejsou krátký")
+                    print("V tu chvíli se lekneš, dostáváš infarkt a umíráš v úctyhodném věku 106 let")
+                    gameover()
+                
+                elif answer == '2':
+                    print("Vejdeš do místnosti a do očí tě hned praští zapnutý počítač.")
+                    print("Jdeš se na něj kouknout a uvidíš v něm zastrčenu flašku, teda flešku.")
+                    print("okamžitě si jdeš sednout k tomu počítači, aby jsi mohl prohledat.")
+                    print("""Na počítači rozklikneš adresář E:\\ a máš tam tři složky:
+                                1 - _SOLIDWORKS
+                                2 - Domácí úkoly
+                                3 - Tetris""")
+                    file = input("Do které složky se podíváš? ")
+                    if file == '1':
+                        print("Otevřeš složku _SOLIDWORKS a uvidíš tam divné soubory se jménem a připonou .SLDPRT.")
+                        print("Zkusíš ho otevřít, ale Windows neví v čem ho otevřít, ale nabídne ti proram jménem SolidWorks.")
+                        t.sleep(2)
+                        print("Chvíli čekáš, a pak se otevře program, který je nápadný CADu.")
+                        print("Tak se rozhodneš ho zavřít a hledat jinde na flešce.")
+                        t.sleep(3)
+                        print("To už je ale pozdě, ikony na hlavním menu se začnou ztrácet a ty jsi nakopal registry!!!")
+                        print("Najednou, ale dostaneš silnou ránu do zad a nějaký člověk na tebe začne křičet, že jsi zvíře.")
+                        #! Najman reference
+                        print("Ale nedokřičí, ty jsi způsobil exitus tomu počítači a ten plešatý pán ho způsobil tobě.")
+                        gameover()
+
+                    elif file == '2':
+                        print("v této složce se nachází: ")
+                        #? play(holy)
+                        print("Instalační soubory pro LabView, ty co jsi tak snaživě hleadal.")
+                        print("A mimo jiné ještě složka s názvem \"porn\".")
+                        print("Ze zvědavosti na ni najedeš a průzkumník souborů ti ukáže, že má 50 GB.")
+                        print("Ty nemůžeš uvěřit vlastním očím, ale tebe hlavně zajímá, že jsi našel instalační soubory.")
+                        endings[2] = "bad"
+                        continue
+                    
+                    elif file == '3':
+                        print("Otevřeš složku s nápisem Tetris.")
+                        print("Nachází se v ní dva soubory: Tetris.vi a Tetris.py")
+                        #? play(holy)
+                        print("Radši si oba dva soubory zálohuješ, třeba by se ti mohly hodit na obhajoby.")
+                        endings.append("Tetris")
+                        continue
+
+                    else:
+                        print("Radši ze strachu utečeš, aby jsi něco nerozbil.")
+                        #? play(error_sound)
+                        continue
+
+                elif answer == '3':
+                    print("Rozhodneš se tedy podívat do místnosti, nic v ní na první pohled nevidíš, ale rozhodneš se tam vstoupit.")
+                    print("Najednou uslyšíš zapraskání a bum, propadne se s tebou podlaha.")
+                    print("Propadl jsi se o patro níž a spadnul na skříň, která se tvým pádem otevřela")
+                    #? play(holy)
+                    print("Vypadl z ní honzův kabel")
+                    print("Ale ty bohužel umíráš na důsledky pádu.")
+                    gameover()
+
+                elif answer == '4':
+                    print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
+                    #? play(scary_music)
+                    print("Výtah se rozjede, ale najednou se zastaví.")
+                    print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
+                    gameover()
+
+                elif answer == '5':
+                    print("Pomalu scházíš ze schodů a v otevřených dveřích o patro níž, zahlédneš skříň.")
+                    print("Ne jen tak ledajakou, mohla by to být skříň ve které se nachází Honzův kabel.")
+                    print("Seběhneš tedy ke skříňi a snažíš se do ní dostat, lomcuješ s ní, aby se otevřela.")
+                    print("Ale místo toho aby se otevřela a spadla na tebe a tím se otevřela.")
+                    #? play(holy)
+                    print("A vypadl z ní legendární Honzův kabel.")
+                    t.sleep(2)
+                    print("Ale nastal menší problém, reespektive exitus, který byl způsobený pádem té skříně.")
+                    gameover()
+
+                else:
+                    print("Radši se vrátíš zpět po svých stopách.")
+                    #? play(error_sound)
+                    continue
 
             elif answer == '2':
                 print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
@@ -785,8 +887,91 @@ while True:
                 continue
 
             elif answer == '3':
-                pass
+                #TODO: minecraft unitl old age - seperate room, real ending, java - javascript
+                print("Jdeš chodbou a cestou zkoušíš různé dveře.")
+                print("Otevřou se ti troje dveře. A na konci cesty je ještě výtah.")
+                print("""Takže máš na výběr ze čtyř možností:
+                            1 - První dveře
+                            2 - Druhé dveře
+                            3 - Třetí dveře
+                            4 - Výtah""")
+                answer = input("Kam se tedy vydáš? ")
+                if answer == '1':
+                    #? play(alarm)
+                    print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
+                    print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
+                    print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
+                    #? play(gunshots)
+                    t.sleep(3)
+                    print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
+                    print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
+                    print("Teď ho můžeš strašit, až do jeho smrti.")
+                    gameover()
 
+                elif answer == '2':
+                    print("Vstoupíš do místnosti a všimneš si někdo tu nechal zapnutý počítač.")
+                    print("Přisedneš k počítači a zjistíš, že někdo na něm necha zapnutý minecraft.")
+                    print("Ihned zapomeneš na potřebu svobody a rozhodneš si zahrát.")
+                    t.sleep(5)
+                    print("Po chvíli tě to přestane bavit, akorát to má menší problém.")
+                    print("Ty jsi zestárl nejméně o 90 let")
+                    print("Ach jo, minecraft je taková zábava, a ještě k tomu je to sandbox hra, takže v ní můžnu dělat všechno možné.")
+                    print("V tu chvíli se lekneš, dostáváš infarkt a umíráš v úctyhodném věku 106 let")
+                    gameover()
+
+                elif answer == '3':
+                    print("Vejdeš do místnosti a do očí tě hned praští zapnutý počítač.")
+                    print("Jdeš se na něj kouknout a uvidíš v něm zastrčenu flašku, teda flešku.")
+                    print("okamžitě si jdeš sednout k tomu počítači, aby jsi mohl prohledat.")
+                    print("""Na počítači rozklikneš adresář E:\\ a máš tam tři složky:
+                                1 - LabView
+                                2 - Java
+                                3 - Domácí úkoly""")
+                    file = input("Do které složky se podíváš? ")
+                    if file == '1':
+                        print("Otevřeš složku s Nadpisem LabView a opravdu v ní je to co je tam napsáno.")
+                        #? play(holy)
+                        print("Opravdu v ní jsou instalační soubory k LabView.")
+                        print("Rychle si vezmeš flešku a vracíš se zpět do místnosti s pentagramem.")
+                        continue
+
+                    elif file == '2':
+                        print("Otevřeš složku s nápisem Java.")
+                        print("Nachází se v něm nějaký kód.")
+                        print("Jelikož tě vždy zajímala Java, rozhodneš se ten kód otevřít.")
+                        print("Ale místo Javy, na tebe vyskočí nějaký pseudokód.")
+                        t.sleep(2)
+                        print("Wait a minute, řekneš si a dojde to, ale moc pozdě.")
+                        print("Ten JavaScript kód ti už vypálil oči a ty si říkáš jak je nezodpovědný.")
+                        print("Ale pro tebe nastává...")
+                        gameover()
+
+                    elif file == '3':
+                        print("Otevřeš složku s domácími úkoly, až na to, že v ní žadné domácí úkoly nejsou.")
+                        print("Je tam, jak to říct, spousta kvalitních filmů určitého žánru.")
+                        print("Zapomeneš na to, že jsi sem přišel hledat instalační soubory k LabView a jeden film si pustíš.")
+                        t.sleep(10)
+                        print("Až ten film skončil, ty jsi si užil.") 
+                        print("Ale na to LabView sis nevzpomněl a proto se vracíš zpět do místnosti s pentagramem.")
+                        continue
+
+                    else:
+                        print("Radši ze strachu utečeš, aby jsi něco nerozbil.")
+                        #? play(error_sound)
+                        continue
+
+                elif answer == '4':
+                    #? play(cink)
+                    print("Přijdeš k výtahu a zmáčkneš tlačitko, výtah cinkne, ale nic se neděje.")
+                    t.sleep(5)
+                    print("Čekáš ještě chvíli, ale potom si všimneš, že na displeji beěhají písmenka zobrazující text: MIMO PROVOZ")
+                    print("Zahanben svojí nepozorností se vrátíš zpět do místnosti s pentagramem")
+                    continue
+
+                else:
+                    print("Radši se vrátíš zpět po svých stopách.")
+                    #? play(error_sound)
+                    continue
             else:
                 print("Radši budu hledat něco jiného.")
                 #? play(error_sound)
@@ -911,9 +1096,9 @@ while True:
                     continue
 
                 else:
-                    print("Radši budu hledat něco jiného.")
+                    print("Radši se vrátíš zpět po svých stopách.")
                     #? play(error_sound)
-                    continue 
+                    continue
             elif answer == '2':
                 answer = input("Kam to tedy bude? ")
                 print("""Jdeš levou chodbou, ale cestou jsi viděl tři místnosti s označením:
@@ -968,9 +1153,9 @@ while True:
                     continue
 
                 else:
-                    print("Radši budu hledat něco jiného.")
+                    print("Radši se vrátíš zpět po svých stopách.")
                     #? play(error_sound)
-                    continue 
+                    continue
 
             elif answer == '3':
                 #? play(scary_sound)
