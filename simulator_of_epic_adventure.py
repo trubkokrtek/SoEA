@@ -546,7 +546,61 @@ while True:
                     #? play(error_sound)
                     continue
             elif answer == '2':
+                print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
+                print("Zavřeš oči a zmáčkneš náhodné tlačítko")
+                t.sleep(4)
+                #? play(cink)
+                print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
+
+            elif answer == '3':
+                print("Běžís chodbou za roh, ale cestou sklouzneš a padáš v plné rychlosti k zemi")
+                print("Umíráš na místě, kvůli rozražení tvé lebky")
+                gameover()
+
+            else:
+                print("Radši budu hledat něco jiného.")
+                #? play(error_sound)
+                continue 
+            
+        case 3:
+            if endings[2] != "":
+                print("Tento předmět jsi už našel!")
+                #? play(error_sound)
+                continue
+            #? play(inteligent_music)
+            print("Přemýšlíš, kde by jsi mohl najít soubory k Labview")
+            t.sleep(3)
+            #? play(cink)
+            print("""   
+                 _____  
+               .'     `.
+              /         \\
+             |           | 
+             '.  +^^^+  .'
+               `. \./ .'
+                 |_|_|  
+                 (___)    
+                 (___)
+                 `---' """)
+            t.sleep(3)
+            os.system("CLS")
+            print("Třeby by tady na patře mohl být nějaký USB disk s instalačními soubory:")
+            print("""Rozhlédneš se kolem sebe a vidíš tři možné cesty:
+                      1 - Chodba vlevo za roh
+                      2 - Výtah
+                      3 - Dlouhá chodba vpravo""")
+            answer = input("Kterou z nich se vydáš? ")
+            if answer == '1':
                 pass
+
+            elif answer == '2':
+                print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
+                print("Zavřeš oči a zmáčkneš náhodné tlačítko")
+                #? play(cink)
+                print("Výtah cinkne, ale nikam nejede")
+                print("To znamená, že jsi zmáčknul tlačítko patra, ve kterém se právě nacházíš")
+                print("Osud ti nepřál a tak se radši vrátíš do místnosti s petagramem")
+                continue
 
             elif answer == '3':
                 pass
@@ -554,12 +608,8 @@ while True:
             else:
                 print("Radši budu hledat něco jiného.")
                 #? play(error_sound)
-                continue 
-        case 3:
-            if endings[2] != "":
-                print("Tento předmět jsi už našel!")
-                #? play(error_sound)
                 continue
+                
         case 4:
             if endings[3] != "":
                 print("Tento předmět jsi už našel!")
@@ -571,7 +621,7 @@ while True:
                 #? play(error_sound)
                 continue
             #? play(inteligent_music)
-            print("Přemýšlíš, kde by jsi mohl najít pojistku, který potřebuješ k připojení toho počítače")
+            print("Přemýšlíš, kde by jsi mohl najít pojistku")
             t.sleep(3)
             #? play(cink)
             print("""   
@@ -607,8 +657,12 @@ while True:
 
             elif answer == '3':
                 print("Zvolil jsi cestu volný pád")
+                #? play(brave_music)
                 print("Jdeš k nejbližšímu oknu a skočíš z něj.")
                 print("Během pádu si uvědomíš, že jsi udělal něco špatně.")
+                t.sleep(2)
+                print("Dopadáš na zem, jen kvůli tvé blbosti")
+                print("Nevzal jsi si padák, ani jsi nezkontroloval jastli tam je něco co zmírní tvůj pád")
                 print("Co jsi čekal, že se stane, když zvolíš tuto cestu?!")
                 gameover()
 
@@ -671,6 +725,7 @@ while True:
                     t.sleep(2)
                     print("Otevřeš tu krabičku a opravdu tam ta pojistka je.")
                     print("Těsně před tím, než jsi to vzdal si ji našel a už běžíš zpět do místnosti s pentagramem.")
+                    endings[4] = "yes"
                     continue
 
                 else:
