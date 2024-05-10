@@ -1429,6 +1429,7 @@ print("Rovnou spustíš připravený soubor. A...")
 t.sleep(2)
 #? play(cink)
 print("Petrova kapsa zase cinkne.")
+
 print("Tak teď připojit tu Pepovu raketu.")
 t.sleep(4)
 print("Nebylo to tak těžké, jak sis myslil.")
@@ -1438,7 +1439,7 @@ print("Po časovém úseku, který ti připadal jako věčnost, se podaří otev
 t.sleep(1)
 #? play(holy)
 print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
-print("Ale než stačíě cokoliv říct, zmizí.")
+print("Ale než stačíš cokoliv říct, zmizí.")
 
 print("Tak teď ještě tu pojistku.")
 print("Jdeš ji tam rovnou zašroubovat.")
@@ -1450,4 +1451,63 @@ t.sleep(2)
 os.system("CLS")
 print("Teď tam místo serveru leží ta karta, tak potřebná k útěku.")
 print("Okamžitě ji sebereš a běžíš k východu.")
-#TODO i like trains, dream END or is it?
+
+t.sleep(1)
+if bad_endings > 1:
+    print("Vyběhneš ven z univerzity a nadechneš se čerstvého vzduchu.")
+    print("Ale najednou se za tebou objeví dvoudimenzionální postava a prohlásí:\"I like trains!\"")
+    print("Chvíli přemýšlíš, proč by to dělal.")
+    t.sleep(2)
+    print("Teď ti to došlo, velkou nápovědou k odhalení je vysokorychlostní vlak řítíci se přímo na tebe.")
+    print("Ten vlak tě ihned přejel a ty se spocený probudíš ve své posteli.")
+    print("Ty se podíváš z okna ven, ještě je hluboká noc.")
+    t.sleep(1)
+    print("TOHLE VŠECHNO BYL SEN !? Ti probleskne hlavou.")
+else:
+    print("Vyběhneš ven z univerzity a nadechneš se čerstvého vzduchu.")
+    print("Ze dveří za tebou na tebe vykouknou: Honza, Petr, Lenka i Pepa")
+    print("A mávají na rozloučenou.")
+    t.sleep(2)
+    print("TOHLE VŠECHNO BYL SEN !? Ti probleskne hlavou.")
+    print("Najednou ses probral ve své posteli a venku pomalu vstává slunce.")
+    print("Podíváš se na hodiny a zjistíš, že je ideální čas, aby jsi vstával a stihnul dnešní hodinu na Univerzitě.")
+
+t.sleep(5)
+os.system("CLS")
+print(""" 
+ _____ _            _____ _   _ ____  _ 
+|_   _| |__   ___  | ____| \ | |  _ \| |
+  | | | '_ \ / _ \ |  _| |  \| | | | | |
+  | | | | | |  __/ | |___| |\  | |_| |_|
+  |_| |_| |_|\___| |_____|_| \_|____/(_)""")
+t.sleep(5)
+os.system("CLS")
+print("""
+              _       _ _           
+  ___  _ __  (_)___  (_) |_         
+ / _ \| '__| | / __| | | __|        
+| (_) | |    | \__ \ | | |_   _ _ _ 
+ \___/|_|    |_|___/ |_|\__| (_|_|_)""")
+t.sleep(5)
+os.system("CLS")
+print(""" 
+ _____ _     _                                   
+|_   _| |__ (_)___    __ _  __ _ _ __ ___   ___  
+  | | | '_ \| / __|  / _` |/ _` | '_ ` _ \ / _ \ 
+  | | | | | | \__ \ | (_| | (_| | | | | | |  __/ 
+  |_| |_| |_|_|___/  \__, |\__,_|_| |_| |_|\___| 
+                     |___/    _                  
+ _ __ ___   __ _  __| | ___  | |__  _   _ _      
+| '_ ` _ \ / _` |/ _` |/ _ \ | '_ \| | | (_)     
+| | | | | | (_| | (_| |  __/ | |_) | |_| |_      
+|_| |_| |_|\__,_|\__,_|\___| |_.__/ \__, (_)     
+                                    |___/        """)
+t.sleep(5)
+os.system("CLS")
+print("""
+ _____ ____  _   _ ____  _  _____  _  ______ _____ _____ _  __
+|_   _|  _ \| | | | __ )| |/ / _ \| |/ /  _ \_   _| ____| |/ /
+  | | | |_) | | | |  _ \| ' / | | | ' /| |_) || | |  _| | ' / 
+  | | |  _ <| |_| | |_) | . \ |_| | . \|  _ < | | | |___| . \ 
+  |_| |_| \_\\\\___/|____/|_|\_\___/|_|\_\_| \_\|_| |_____|_|\_\ """)
+print("Are you sure this is the end?")
