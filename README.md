@@ -1,4 +1,5 @@
 # Simulátor epického dobrodružství: TUL edice
+### Toto je verze bez hudby
 ### Podmínky:
 * minímálně 500 (300) řádků kódu
 * minimálně 10 rozhodnutí
