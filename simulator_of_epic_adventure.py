@@ -866,7 +866,7 @@ while True:
                 continue
         
             playback._play_with_simpleaudio(intelligent_music)
-            print("Přemýšlíš, kde by jsi mohl najít kabel, který potřebuješ k připojení toho počítače")
+            print("Přemýšlíš, kde by jsi mohl najít nějaký počítač.")
             t.sleep(3)
         
             playback._play_with_simpleaudio(cink)
@@ -934,6 +934,37 @@ while True:
                     print("Chvíli jsi přemýšlel nad tím, o co se jedná, ale nic tě nenapadlo.")
                     print("Stoupneš si proto přímo pod ten SkyLight, ale přehlédnul si, že jsi právě vstoupil na desku ze slídy")
                     print("Pořád ti to nedává smysl a tak se koukneš nad sebe, vidíš tam krásný měsíček v úplňku.")
+                    t.sleep(1)
+                    print("""
+                     .--------------.
+                .---'  o        .    `---.
+             .-'    .    O  .         .   `-.
+          .-'     @@@@@@       .             `-.
+        .'@@   @@@@@@@@@@@       @@@@@@@   .    `.
+      .'@@@  @@@@@@@@@@@@@@     @@@@@@@@@         `.
+     /@@@  o @@@@@@@@@@@@@@     @@@@@@@@@     O     \\
+    /        @@@@@@@@@@@@@@  @   @@@@@@@@@ @@     .  \\
+   /@  o      @@@@@@@@@@@   .  @@  @@@@@@@@@@@     @@ \\
+  /@@@      .   @@@@@@ o       @  @@@@@@@@@@@@@ o @@@@ \\
+ /@@@@@                  @ .      @@@@@@@@@@@@@@  @@@@@ \\
+ |@@@@@    O    `.-./  .        .  @@@@@@@@@@@@@   @@@  |
+/ @@@@@        --`-'       o        @@@@@@@@@@@ @@@    . \\
+|@ @@@@ .  @  @    `    @            @@      . @@@@@@    |
+|   @@                         o    @@   .     @@@@@@    |
+|  .     @   @ @       o              @@   o   @@@@@@.   |
+\     @    @       @       .-.       @@@@       @@@      /
+ |  @    @  @              `-'     . @@@@     .    .    |
+ \ .  o       @  @@@@  .              @@  .           . /
+  \      @@@    @@@@@@       .                   o     /
+   \    @@@@@   @@\@@    /        O          .        /
+    \ o  @@@       \ \  /  __        .   .     .--.  /
+     \      .     . \.-.---                   `--'  /
+      `.             `-'      .                   .'
+        `.    o     / | `           O     .     .'
+          `-.      /  |        o             .-'
+             `-.          .         .     .-'
+                `---.        .       .---'
+                     `--------------'""")
                     t.sleep(2)
                     print("Pozdě ti dojde, že ti tato kontrapce vypaluje oči.")
                     print("Až v tento moment ti došlo, co se ti stalo a proč právě nastává gameover.")
@@ -1244,9 +1275,7 @@ print("Právě jsi získal všechny předměty potřebné k dokončení pentagra
 print("Začneš připojením toho odpojeného počítače.")
 if endings[0] == "crowbar":
     bad_endings += 1
-
     playback._play_with_simpleaudio(holy)
-
     playback._play_with_simpleaudio(scary_sound)
     print("Právě připojuješ ten kabel a v tu chvíli se za tebou objeví Honza.")
     t.sleep(2)
@@ -1346,6 +1375,20 @@ playback._play_with_simpleaudio(cink)
 print("Petrova kapsa zase cinkne.")
 
 print("Tak teď připojit tu Pepovu raketu.")
+print("""   
+   +--------------+
+   |.------------.|
+   ||            ||
+   ||            ||
+   ||            ||
+   ||            ||
+   |+------------+|
+   +-..--------..-+
+   .--------------.
+  / /============\ \\
+ / /==============\ \\
+/____________________\\
+\____________________/""")
 t.sleep(4)
 print("Nebylo to tak těžké, jak sis myslil.")
 print("Tak ještě spustit ten program v LabView.")
@@ -1357,7 +1400,7 @@ print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
 print("Ale než stačíš cokoliv říct, zmizí.")
 
 if "Tetris" in endings:
-    print("Aha, tak ti jsi ještě našel Tetris?")
+    print("Aha, tak ty jsi ještě našel Tetris?")
     print("Tak to ti, jako autor, srdečně blahopřeji.")
     print("Podařil se ti najít tajný konec.")
     t.sleep(5)
@@ -1377,6 +1420,7 @@ if "Tetris" in endings:
 |_|  \___/ \__,_|_| |_|\__,_|                                    """)
 
 print("Tak teď ještě tu pojistku.")
+t.sleep(1)
 print("Jdeš ji tam rovnou zašroubovat.")
 t.sleep(1)
 print("Počítač se hned rozsvítí a ty jdeš spustit program.")
@@ -1394,10 +1438,19 @@ if bad_endings > 1:
     print("Chvíli přemýšlíš, proč by to dělal.")
     t.sleep(2)
     print("Teď ti to došlo, velkou nápovědou k odhalení je vysokorychlostní vlak řítíci se přímo na tebe.")
+    print("""
+            o x o x o x o . . .
+         o      _____            _______________ ___=====__T___
+       .][__n_n_|DD[  ====_____  |    |.\/.|   | |   |_|     |_
+      >(________|__|_[_________]_|____|_/\_|___|_|___________|_|
+      _/oo OOOOO oo`  ooo   ooo   o^o       o^o   o^o     o^o
+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-""")
+    t.sleep(2)
     print("Ten vlak tě ihned přejel a ty se spocený probudíš ve své posteli.")
     print("Ty se podíváš z okna ven, ještě je hluboká noc.")
     t.sleep(1)
     print("TOHLE VŠECHNO BYL SEN !? Ti probleskne hlavou.")
+
 else:
     print("Vyběhneš ven z univerzity a nadechneš se čerstvého vzduchu.")
     print("Ze dveří za tebou na tebe vykouknou: Honza, Petr, Lenka i Pepa")
@@ -1406,6 +1459,7 @@ else:
     print("TOHLE VŠECHNO BYL SEN !? Ti probleskne hlavou.")
     print("Najednou ses probral ve své posteli a venku pomalu vstává slunce.")
     print("Podíváš se na hodiny a zjistíš, že je ideální čas, aby jsi vstával a stihnul dnešní hodinu na Univerzitě.")
+
 t.sleep(5)
 end = t.time() - start
 end = str(round(end, 3))
