@@ -4,3 +4,7 @@
 * minimálně 10 rozhodnutí
 * každá volba musí mít minimálně 3 možnosti
 * deadline: 11.05.2024
+### Requiments:
+* Python 3.1x.x
+* OS: Windows
+* Python commands in cmd
