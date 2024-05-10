@@ -4,12 +4,11 @@ import os
 import time as t
 os.system("Color a")
 os.system("CLS")
-
+start = t.time()
 def gameover():
     t.sleep(5)
-    #? gameover_theme = pd.AudioSegment.from_wav("./music/gameover.wav")
-    #?
-    # playback._play_with_simpleaudio(gameover_theme)
+    gameover_theme = pd.AudioSegment.from_wav("./music/gameover.wav")
+    playback._play_with_simpleaudio(gameover_theme)
     print(""" 
     ######################################################
     #                                                    #
@@ -21,27 +20,28 @@ def gameover():
     # | |_| | (_| | | | | | |  __/ | (_) \ V /  __/ |    #
     #  \____|\__,_|_| |_| |_|\___|  \___/ \_/ \___|_|    #
     #                                                    #
-    #                                                    #  
+    #                                                    # 
     #                                                    #
     ######################################################
     """)
     t.sleep(3)
     quit()
-
-#? music department
-#? try: 
-    #? scary_sound = pd.AudioSegment.from_wav("./music/scary.wav")
-    #? error_sound = pd.AudioSegment.from_wav("./music/error.wav")
-    #? intelligent_music = pd.AudioSegment.from_wav("./music/intelligent.wav")
-    #? brave_music = pd.AudioSegment.from_wav("./music/brave.wav")
-    #? holy = pd.AudioSegment.from_wav("./music/holy.wav")
-    #? organ = pd.AudioSegment.from_wav("./music/organ.wav")
-    #? start_game = pd.AudioSegment.from_wav("./music/start.wav")
-    #? gunshots = pd.AudioSegment.from_wav("./music/gun.wav")
-    #? endgame = pd.AudioSegment.from_wav("./music/endgame.wav")
-#? except:
-    #? print("Nelze načíst hudbu, zkus to znovu, nebo použij verzi bez hudby")
-    #? quit()
+#? music department 
+try: 
+    scary_sound = pd.AudioSegment.from_wav("./music/scary.wav")
+    error_sound = pd.AudioSegment.from_wav("./music/error.wav")
+    intelligent_music = pd.AudioSegment.from_wav("./music/intelligent.wav")
+    brave_music = pd.AudioSegment.from_wav("./music/brave.wav")
+    holy = pd.AudioSegment.from_wav("./music/holy.wav")
+    organ = pd.AudioSegment.from_wav("./music/organ.wav")
+    start_game = pd.AudioSegment.from_wav("./music/start.wav")
+    gunshots = pd.AudioSegment.from_wav("./music/gun.wav")
+    endgame = pd.AudioSegment.from_wav("./music/endgame.wav")
+    cink = pd.AudioSegment.from_wav("./music/cink.wav")
+    alarm = pd.AudioSegment.from_wav("./music/alarm.wav")
+except:
+    print("Nelze načíst hudbu, zkus to znovu, nebo použij verzi bez hudby")
+    quit()
 #TODO 5 artefaktů k otevření petrovy kapsy, k získání karty ke kouzelným dveřím. Otevírání ve tvaru pentagramu. 5 PC (každému chybí něco jiného)
 #TODO Artefakty: Honzův kabel, instalační soubory LabView, Pepovu raketu (a naistalovat naní win11), pojistku, přihlašovací údaje k novým PC na TULce
 #TODO good endings: probuzení ze snu
@@ -78,8 +78,7 @@ t.sleep(5)
 
 print("""Ahoj, právě ses probudil na TULce.
       Nevíš jak jsi se sem dostal, ale vedle tebe na zemi je nakresleno něco jako pentagram a v každém kruhu je počítač, kromě jednoho""")
-#?
-# playback._play_with_simpleaudio(scary_sound)
+playback._play_with_simpleaudio(scary_sound)
 print("""Co uděláš? Utečeš, podíváš se na to zblízka, nebo zkameníš strachy na místě:
         1 - Uteču
         2 - Podívám se na ten pentagram zblízka
@@ -88,11 +87,11 @@ answer = input("Co tedy uděláš? 1 / 2 / 3: ")
 if answer == '1':
     print("Vyběhneš z místnosti s pentagramem k nelblišším dveřím, ale zjistíš, že dveře jsou zamčené.")
     print("Podíváš se blíže na zámek dveří a zjistíš, že k jejich otevření je potřeba legendární kouzelná karta, kterou lze nalést jen na jediném místě.")
-    #?
-    # playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(holy)
     print("V Petrově kapse.")
-    #?
-    # playback._play_with_simpleaudio(organ)
+
+    playback._play_with_simpleaudio(organ)
     t.sleep(20)
     print("Rozhodneš se, že podíváš na ten pentagram a ještě k tomu jsi vypotřeboval 20 sekund svého času.")
     print("Když se podíváš na ten pentagram, zjistíš, že uprostřed se nachází trezor s nápisem \"Petrova kapsa\".")
@@ -104,17 +103,17 @@ if answer == '1':
     print("Zjistil si, že potřebuješ najít kabel, přihlašovací údaje, instalační soubory pro LabView, nějaký další počítač a pojistku.")
     print("Hodně štěstí při hraní této hry. Doufám, že ho nebudeš potřebovat.")
     print("Užij si hru!")
-    #?
-    # playback._play_with_simpleaudio(start_game)
+
+    playback._play_with_simpleaudio(start_game)
 
 elif answer == '2':
-    #?
-    # playback._play_with_simpleaudio(brave_music)
-    #?
-    # playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(brave_music)
+
+    playback._play_with_simpleaudio(holy)
     print("Zjistíš, že uprostřed pentagramu se nachází trezor s nápisem \"Petrova kapsa\"")
-    #?
-    # playback._play_with_simpleaudio(inteligent_music)
+
+    playback._play_with_simpleaudio(intelligent_music)
     print("Právě ti došlo, že k útěku potrebuješ legendární kouzelnou kartu")
     print("Při ještě jedné bližší prohlídce zjistíš, že každému ze 4 počítaču v cípech pentagramu chybí určité části. A jeden počítač chybí kompletně.")
     print("Mimo jiné zjistíš že do trezoru vedou 4 kabely od 4 cípů pentagramu. Jeden kabel chybí.")
@@ -124,14 +123,14 @@ elif answer == '2':
     print("Zjistil si, že potřebuješ najít kabel, přihlašovací údaje, instalační soubory pro LabView, nějaký další počítač a pojistku.")
     print("Hodně štěstí při hraní této hry. Doufám, že ho nebudeš potřebovat.")
     print("Užij si hru!")
-    #?
-    # playback._play_with_simpleaudio(start_game)
+
+    playback._play_with_simpleaudio(start_game)
 
 
 else:
     print("Na místě jsi zkameněl strachy")
-    #?
-    # playback._play_with_simpleaudio(scary_music)
+
+    playback._play_with_simpleaudio(scary_sound)
     print("Najednou ucítíš, že ti kamenní nohy, podíváš se na ně a zjistíš, že ti kamenní doopravdy")
     print("Kdybys nenapsal nesmyslnou odpověď na první volbu, nic by se ti nestalo")
     print("Umřel jsi a to hra ještě nazačala, tys to vyved!")
@@ -155,22 +154,22 @@ while True:
             raise ValueError
     except ValueError:
         print("Zkus hledat něco validního!")
-        #?
-        # playback._play_with_simpleaudio(error_sound)
+    
+        playback._play_with_simpleaudio(error_sound)
         continue
     match search:
         case 1:
             if endings[0] != "":
                 print("Tento předmět jsi už našel!")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
-            #?
-            # playback._play_with_simpleaudio(inteligent_music)
+        
+            playback._play_with_simpleaudio(intelligent_music)
             print("Přemýšlíš, kde by jsi mohl najít kabel, který potřebuješ k připojení toho počítače")
             t.sleep(3)
-            #?
-            # playback._play_with_simpleaudio(cink)
+        
+            playback._play_with_simpleaudio(cink)
             print("""   
                  _____  
                .'     `.
@@ -202,8 +201,8 @@ while True:
                 print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
                 print("Zavřeš oči a zmáčkneš náhodné tlačítko")
                 t.sleep(3)
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
                 print("""Vidíš před sebou tři cesty:
                             1 - Rovnou chodbu, dlouhou tak, že ani nevidíš kam vede
@@ -223,8 +222,8 @@ while True:
                     answer = input("Kam se vydáš? ")
                     if answer == '1':
                         print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
-                        #?
-                        # playback._play_with_simpleaudio(scary_music)
+                    
+                        playback._play_with_simpleaudio(scary_sound)
                         print("Výtah se rozjede, ale najednou se zastaví.")
                         print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
                         gameover()
@@ -233,8 +232,8 @@ while True:
                         print("Řekneš si, že se ti do schodů nechce, jsi na to moc líný.")
                         print("Takže se rozhodneš podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
                         print("Vstoupíš do místnosti a vytáhneš páčidlo a vypáčíš si cestu do skříně a opravdu tam je.")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Posvátný honzův kabel")
                         endings[0] = "crowbar"
                         print("Vracíš se do místnosti s pentagramem.")
@@ -242,16 +241,16 @@ while True:
                     elif answer == '3':
                         print("Rozhodneš se tedy podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
                         print("Vstoupíš do místnosti a vytáhneš páčidlo a vypáčíš si cestu do skříně a opravdu tam je.")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Posvátný honzův kabel")
                         endings[0] = "crowbar"
                         print("Vracíš se do místnosti s pentagramem.")
                     
                     else:
                         print("Radši se vrátíš zpět po svých stopách.")
-                        #?
-                        # playback._play_with_simpleaudio(error_sound)
+                    
+                        playback._play_with_simpleaudio(error_sound)
                         continue
                 
                 elif answer == '2':
@@ -269,8 +268,8 @@ while True:
                     answer = input("Kam se vydáš? ")
                     if answer == '1':
                         print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
-                        #?
-                        # playback._play_with_simpleaudio(scary_music)
+                    
+                        playback._play_with_simpleaudio(scary_sound)
                         print("Výtah se rozjede, ale najednou se zastaví.")
                         print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
                         gameover()
@@ -281,8 +280,8 @@ while True:
                         print("Vstoupíš do místnosti, zkusíš otevřít tu skříň, ale je zamčená")
                         print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
                         print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Posvátný honzův kabel")
                         endings[0] = "key"
                         print("Vracíš se do místnosti s pentagramem.")
@@ -291,22 +290,22 @@ while True:
                         print("Rozhodneš se tedy podívat do místnosti a zahlédneš tam skříň. Možná by to mohla být skříň s Honzovým kabelem")
                         print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
                         print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Posvátný honzův kabel")
                         endings[0] = "key"
                         print("Vracíš se do místnosti s pentagramem.")
                     
                     else:
                         print("Radši se vrátíš zpět po svých stopách.")
-                        #?
-                        # playback._play_with_simpleaudio(error_sound)
+                    
+                        playback._play_with_simpleaudio(error_sound)
                         continue
              
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
 
             
             elif answer == '3':
@@ -319,8 +318,8 @@ while True:
                 answer = input("Kam se vydáš? ")
                 if answer == '1':
                     print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko")
-                    #?
-                    # playback._play_with_simpleaudio(scary_music)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("Výtah se rozjede, ale najednou se zastaví.")
                     print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky")
                     gameover()
@@ -331,8 +330,8 @@ while True:
                     print("Vstoupíš do místnosti, zkusíš otevřít tu skříň, ale je zamčená")
                     print("Rozhlédneš se po místnosti a na věšáku tam visí klíče, možná by tam mohl jeden z nich sedět a rozhodneš se je vyzkoušet")
                     print("A jeden z nich opravdu pasuje, otevřeš tu skříň a je v ní!")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("Posvátný honzův kabel")
                     endings[0] = "key"
                     print("Vracíš se do místnosti s pentagramem.")
@@ -341,33 +340,33 @@ while True:
                     print("Rozhodneš se tedy podívat do místnosti, nic v ní na první pohled nevidíš, ale rozhodneš se tam vstoupit.")
                     print("Najednou uslyšíš zapraskání a bum, propadne se s tebou podlaha.")
                     print("Propadl jsi se o patro níž a spadnul na skříň, která se tvým pádem otevřela")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("Vypadl z ní honzův kabel")
                     print("Ale ty bohužel umíráš na důsledky pádu.")
                     gameover()
                 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
             
             else:
                 print("Radši budu hledat něco jiného")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue 
                 
         case 2:
             if endings[1] != "":
                 print("Tento předmět jsi už našel!")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
             print("Přemýšlíš, kde by jsi mohl najít přihlašovací údaje.")
             t.sleep(3)
-            #?
-            # playback._play_with_simpleaudio(cink)
+        
+            playback._play_with_simpleaudio(cink)
             print("""   
                  _____  
                .'     `.
@@ -389,8 +388,8 @@ while True:
             answer = input("Kterou z nich se vydáš? ")
             if answer == '1':
                 print("Sejdeš o jedno patro níž a přemýšlíš jestli jít ještě o jedno níž.")
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Hodíš si mincí a padne hlava, takže se vydáš ještě o jendo patro níž.")
                 print("""Když sehdeš o patro níž, nabízí se ti tentokrát čtyři cesty: 
                             1 - Schody vedoucí níže
@@ -400,8 +399,8 @@ while True:
                 answer = input("Kterou z nich se vydáš? ")
                 if answer == '1':
                     print("Jdeš postupně schod po schodu dolů, je tam Temno, jakoby to napsal sám Jirásek.")
-                    #?
-                    # playback._play_with_simpleaudio(scary_sound)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("Uslyšíš strašidelný zvuk, lekneš se a začneš utíkat zpátky do schodů.")
                     print("Cestou zakopneš o schod a už padáš hlavou napřed, směrem k zemi.")
                     gameover()
@@ -439,21 +438,21 @@ while True:
                                 gameover()
                             
                             case "AP302":
-                                #?
-                                # playback._play_with_simpleaudio(alarm)
+                            
+                                playback._play_with_simpleaudio(alarm)
                                 print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
                                 print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
                                 print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
-                                #?
-                                # playback._play_with_simpleaudio(gunshots)
+                            
+                                playback._play_with_simpleaudio(gunshots)
                                 t.sleep(3)
                                 print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
                                 print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
                                 print("Teď ho můžeš strašit, až do jeho smrti.")
                                 gameover()
                             case "AP303":
-                                #?
-                                # playback._play_with_simpleaudio(scary_sound)
+                            
+                                playback._play_with_simpleaudio(scary_sound)
                                 print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
                                 print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
                                 print("Najednou nemůžeš dýchat a umíráš.")
@@ -482,8 +481,8 @@ while True:
                             case "AP308":
                                 print("Vstoupíš do místnosti a uprostřed se nachází portál.")
                                 print("Přemýšlíš jestli do něj vstoupit.")
-                                #?
-                                # playback._play_with_simpleaudio(brave_music)
+                            
+                                playback._play_with_simpleaudio(brave_music)
                                 t.sleep(3)
                                 print("Rozhodneš se do něj vstoupit.")
                                 print("Najednou ses ocitl, zpátky v místnosti s pentagramem.")
@@ -491,8 +490,8 @@ while True:
                                 break
 
                             case "AP309":
-                                #?
-                                # playback._play_with_simpleaudio(scary_sound)
+                            
+                                playback._play_with_simpleaudio(scary_sound)
                                 print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
                                 print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
                                 print("Najednou nemůžeš dýchat a umíráš.")
@@ -504,8 +503,8 @@ while True:
                             case _:
                                 room = "return"    
                                 print("Radši se vrátíš zpět po svých stopách.")
-                                #?
-                                # playback._play_with_simpleaudio(error_sound)
+                            
+                                playback._play_with_simpleaudio(error_sound)
                                 break
                     
                     if room == "return":
@@ -518,8 +517,8 @@ while True:
                             break
                         
                         case "AP311":
-                            #?
-                            # playback._play_with_simpleaudio(scary_sound)
+                        
+                            playback._play_with_simpleaudio(scary_sound)
                             print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
                             print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
                             print("Najednou nemůžeš dýchat a umíráš.")
@@ -560,21 +559,21 @@ while True:
                             print("Tato místnost je zamčená.")
 
                         case "AP319":
-                            #?
-                            # playback._play_with_simpleaudio(scary_sound)
+                        
+                            playback._play_with_simpleaudio(scary_sound)
                             print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
                             print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
                             print("Najednou nemůžeš dýchat a umíráš.")
                             gameover()
 
                         case "AP320":
-                            #?
-                            # playback._play_with_simpleaudio(alarm)
+                        
+                            playback._play_with_simpleaudio(alarm)
                             print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
                             print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
                             print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
-                            #?
-                            # playback._play_with_simpleaudio(gunshots)
+                        
+                            playback._play_with_simpleaudio(gunshots)
                             t.sleep(3)
                             print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
                             print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
@@ -584,8 +583,8 @@ while True:
                         case _:
                             room = "return"    
                             print("Radši se vrátíš zpět po svých stopách.")
-                            #?
-                            # playback._play_with_simpleaudio(error_sound)
+                        
+                            playback._play_with_simpleaudio(error_sound)
                             break
                     
                     if room == "return":
@@ -593,15 +592,15 @@ while True:
                 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
             elif answer == '2':
                 print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
                 print("Zavřeš oči a zmáčkneš náhodné tlačítko")
                 t.sleep(4)
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
 
             elif answer == '3':
@@ -611,21 +610,21 @@ while True:
 
             else:
                 print("Radši budu hledat něco jiného.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue 
         case 3:
             if endings[2] != "":
                 print("Tento předmět jsi už našel!")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
-            #?
-            # playback._play_with_simpleaudio(inteligent_music)
+        
+            playback._play_with_simpleaudio(intelligent_music)
             print("Přemýšlíš, kde by jsi mohl najít soubory k Labview.")
             t.sleep(3)
-            #?
-            # playback._play_with_simpleaudio(cink)
+        
+            playback._play_with_simpleaudio(cink)
             print("""   
                  _____  
                .'     `.
@@ -691,8 +690,8 @@ while True:
 
                     elif file == '2':
                         print("v této složce se nachází: ")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Instalační soubory pro LabView, ty co jsi tak snaživě hleadal.")
                         print("A mimo jiné ještě složka s názvem \"porn\".")
                         print("Ze zvědavosti na ni najedeš a průzkumník souborů ti ukáže, že má 50 GB.")
@@ -703,32 +702,32 @@ while True:
                     elif file == '3':
                         print("Otevřeš složku s nápisem Tetris.")
                         print("Nachází se v ní dva soubory: Tetris.vi a Tetris.py.")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Radši si oba dva soubory zálohuješ, třeba by se ti mohly hodit na obhajoby.")
                         endings.append("Tetris")
                         continue
 
                     else:
                         print("Radši ze strachu utečeš, aby jsi něco nerozbil.")
-                        #?
-                        # playback._play_with_simpleaudio(error_sound)
+                    
+                        playback._play_with_simpleaudio(error_sound)
                         continue
 
                 elif answer == '3':
                     print("Rozhodneš se tedy podívat do místnosti, nic v ní na první pohled nevidíš, ale rozhodneš se tam vstoupit.")
                     print("Najednou uslyšíš zapraskání a bum, propadne se s tebou podlaha.")
                     print("Propadl jsi se o patro níž a spadnul na skříň, která se tvým pádem otevřela.")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("Vypadl z ní honzův kabel.")
                     print("Ale ty bohužel umíráš na důsledky pádu.")
                     gameover()
 
                 elif answer == '4':
                     print("Vstoupíš do výtahu, zavřeš oči a náhodně zmáčkneš tlačítko.")
-                    #?
-                    # playback._play_with_simpleaudio(scary_music)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("Výtah se rozjede, ale najednou se zastaví.")
                     print("Výtah najednou začne padat vysokou rychlostí, výsledek ti je zřejmý už při začátku tvé panické ataky.")
                     gameover()
@@ -738,8 +737,8 @@ while True:
                     print("Ne jen tak ledajakou, mohla by to být skříň ve které se nachází Honzův kabel.")
                     print("Seběhneš tedy ke skříňi a snažíš se do ní dostat, lomcuješ s ní, aby se otevřela.")
                     print("Ale místo toho aby se otevřela a spadla na tebe a tím se otevřela.")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("A vypadl z ní legendární Honzův kabel.")
                     t.sleep(2)
                     print("Ale nastal menší problém, reespektive exitus, který byl způsobený pádem té skříně.")
@@ -747,15 +746,15 @@ while True:
 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
 
             elif answer == '2':
                 print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
                 print("Zavřeš oči a zmáčkneš náhodné tlačítko.")
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Výtah cinkne, ale nikam nejede.")
                 print("To znamená, že jsi zmáčknul tlačítko patra, ve kterém se právě nacházíš.")
                 print("Osud ti nepřál a tak se radši vrátíš do místnosti s petagramem.")
@@ -771,13 +770,13 @@ while True:
                             4 - Výtah""")
                 answer = input("Kam se tedy vydáš? ")
                 if answer == '1':
-                    #?
-                    # playback._play_with_simpleaudio(alarm)
+                
+                    playback._play_with_simpleaudio(alarm)
                     print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
                     print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
                     print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
-                    #?
-                    # playback._play_with_simpleaudio(gunshots)
+                
+                    playback._play_with_simpleaudio(gunshots)
                     t.sleep(3)
                     print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
                     print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
@@ -806,8 +805,8 @@ while True:
                     file = input("Do které složky se podíváš? ")
                     if file == '1':
                         print("Otevřeš složku s Nadpisem LabView a opravdu v ní je to co je tam napsáno.")
-                        #?
-                        # playback._play_with_simpleaudio(holy)
+                    
+                        playback._play_with_simpleaudio(holy)
                         print("Opravdu v ní jsou instalační soubory k LabView.")
                         endings[2] = "good"
                         print("Rychle si vezmeš flešku a vracíš se zpět do místnosti s pentagramem.")
@@ -835,13 +834,13 @@ while True:
 
                     else:
                         print("Radši ze strachu utečeš, aby jsi něco nerozbil.")
-                        #?
-                        # playback._play_with_simpleaudio(error_sound)
+                    
+                        playback._play_with_simpleaudio(error_sound)
                         continue
 
                 elif answer == '4':
-                    #?
-                    # playback._play_with_simpleaudio(cink)
+                
+                    playback._play_with_simpleaudio(cink)
                     print("Přijdeš k výtahu a zmáčkneš tlačitko, výtah cinkne, ale nic se neděje.")
                     t.sleep(5)
                     print("Čekáš ještě chvíli, ale potom si všimneš, že na displeji beěhají písmenka zobrazující text: MIMO PROVOZ")
@@ -850,27 +849,27 @@ while True:
 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
             else:
                 print("Radši budu hledat něco jiného.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
                 
         case 4:
             if endings[3] != "":
                 print("Tento předmět jsi už našel!")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
-            #?
-            # playback._play_with_simpleaudio(inteligent_music)
+        
+            playback._play_with_simpleaudio(intelligent_music)
             print("Přemýšlíš, kde by jsi mohl najít kabel, který potřebuješ k připojení toho počítače")
             t.sleep(3)
-            #?
-            # playback._play_with_simpleaudio(cink)
+        
+            playback._play_with_simpleaudio(cink)
             print("""   
                  _____  
                .'     `.
@@ -899,8 +898,8 @@ while True:
                 print("Vejdeš do výtahu a přemýšlíš, do kterého patra se vydáš.")
                 print("Zavřeš oči a zmáčkneš náhodné tlačítko")
                 t.sleep(3)
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
                 
 
@@ -912,8 +911,8 @@ while True:
 
             else:
                 print("Radši budu hledat něco jiného.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
             
             print("""Vidíš před sebou tři cesty:
@@ -942,8 +941,8 @@ while True:
                     print("Experimentovali se soustředěním slunečních paprsků a zapomněli na to a ty jsi kvůli tomu umřel.")
                     gameover()
                 elif room == '2':
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("Vstoupíš do místnosti a přímo před tebou se nachází Pepova raketa.")
                     print("Ty se modlíš, aby fungovala.")
                     t.sleep(1)
@@ -958,8 +957,8 @@ while True:
                     continue
 
                 elif room == '3':
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     print("Vstoupíš do místnosti a přímo před tebou se nachází Pepova raketa.")
                     print("Ty se modlíš, aby fungovala.")
                     t.sleep(1)
@@ -972,8 +971,8 @@ while True:
                     continue
 
                 elif room == '4':
-                    #?
-                    # playback._play_with_simpleaudio(scary_sound)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("""Na této místnosti je tento symbol:             
              zeeeeee-
             z$$$$$$"
@@ -1007,8 +1006,8 @@ while True:
                     continue
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
 
             elif answer == '2':
@@ -1031,22 +1030,22 @@ while True:
 
             else:
                 print("Radši se vrátíš zpět po svých stopách.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
 
         case 5:
             if endings[4] != "":
                 print("Tento předmět jsi už našel!")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
-            #?
-            # playback._play_with_simpleaudio(inteligent_music)
+        
+            playback._play_with_simpleaudio(intelligent_music)
             print("Přemýšlíš, kde by jsi mohl najít pojistku")
             t.sleep(3)
-            #?
-            # playback._play_with_simpleaudio(cink)
+        
+            playback._play_with_simpleaudio(cink)
             print("""   
                  _____  
                .'     `.
@@ -1067,24 +1066,24 @@ while True:
                       3 - Volný pád""")
             answer = input("Kterou z nich se vydáš? ")
             if answer == '1':
-                #?
-                # playback._play_with_simpleaudio(scary_sound)
+            
+                playback._play_with_simpleaudio(scary_sound)
                 print("Seběhneš schody o pár pater níž.")
-                #?
-                # playback._play_with_simpleaudio(brave_music)
+            
+                playback._play_with_simpleaudio(brave_music)
                 print("Cestou kolem sebe slyšíš spostu strašidelných zvuků, ale ty se jimi nenecháš zastrašit.")
                 print("Když už níže se po schodech nedostaneš, rozhlédneš se kolem.")
             elif answer == '2': 
                 print("Vejdeš do výtahu a rovnou zmáčkneš tlačítko s -1.")
                 t.sleep(6)
-                #?
-                # playback._play_with_simpleaudio(cink)
+            
+                playback._play_with_simpleaudio(cink)
                 print("Dveře výtahu se otevřou, vyjdeš z výtahu a rozhlédneš se kolem")
 
             elif answer == '3':
                 print("Zvolil jsi cestu volný pád")
-                #?
-                # playback._play_with_simpleaudio(brave_music)
+            
+                playback._play_with_simpleaudio(brave_music)
                 print("Jdeš k nejbližšímu oknu a skočíš z něj.")
                 print("Během pádu si uvědomíš, že jsi udělal něco špatně.")
                 t.sleep(2)
@@ -1095,8 +1094,8 @@ while True:
 
             else:
                 print("Radši budu hledat něco jiného.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue 
             print("""Kolem tebe jsou tři cesty: 
                             1 - Dlouhá chodba doleva
@@ -1141,8 +1140,8 @@ while True:
 
                 elif room == '2':
                     print("Tato místnost je zamčená, ale snažíš se dostat dovnitř hrubou silou")
-                    #?
-                    # playback._play_with_simpleaudio(scary_sound)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("Ale uslyšíš nějaké strašidelné zvuky a jakoby něco padalo.")
                     print("Strachem se radši vrátíš do místnosti s pentagramem.")
                     continue
@@ -1150,8 +1149,8 @@ while True:
                 elif room == '3':
                     print("Vstoupíš do místnosti, porozhlédneš se po pojistce, ale nemůžeš ji najít.")
                     print("Hledáš, stále hledáš, až ti zbyde poslední místo kam jsi se nepodíval a ty jen doufáš, že tam ta pojistka je.")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     t.sleep(2)
                     print("Otevřeš tu krabičku a opravdu tam ta pojistka je.")
                     print("Těsně před tím, než jsi to vzdal si ji našel a už běžíš zpět do místnosti s pentagramem.")
@@ -1160,8 +1159,8 @@ while True:
 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
             elif answer == '2':
                 answer = input("Kam to tedy bude? ")
@@ -1202,8 +1201,8 @@ while True:
 
                 elif room == '3':
                     print("Tato místnost je zamčená, ale snažíš se dostat dovnitř hrubou silou")
-                    #?
-                    # playback._play_with_simpleaudio(scary_sound)
+                
+                    playback._play_with_simpleaudio(scary_sound)
                     print("Ale uslyšíš nějaké strašidelné zvuky a jakoby něco padalo.")
                     print("Strachem se radši vrátíš do místnosti s pentagramem.")
                     continue
@@ -1211,8 +1210,8 @@ while True:
                 elif room == '1':
                     print("Vstoupíš do místnosti, porozhlédneš se po pojistce, ale nemůžeš ji najít.")
                     print("Hledáš, stále hledáš, až ti zbyde poslední místo kam jsi se nepodíval a ty jen doufáš, že tam ta pojistka je.")
-                    #?
-                    # playback._play_with_simpleaudio(holy)
+                
+                    playback._play_with_simpleaudio(holy)
                     t.sleep(2)
                     print("Otevřeš tu krabičku a opravdu tam ta pojistka není.")
                     print("Takže kapituluješ a vracíš se zpět do místnosti s pentagramem s ocasem stažaným mezi tvýma nohama.")
@@ -1220,36 +1219,35 @@ while True:
 
                 else:
                     print("Radši se vrátíš zpět po svých stopách.")
-                    #?
-                    # playback._play_with_simpleaudio(error_sound)
+                
+                    playback._play_with_simpleaudio(error_sound)
                     continue
 
             elif answer == '3':
-                #?
-                # playback._play_with_simpleaudio(scary_sound)
+            
+                playback._play_with_simpleaudio(scary_sound)
                 print("Radši ses vrátil zpět nahoru, protože jsi se bál.")
                 continue
 
             else:
                 print("Radši se vrátíš zpět po svých stopách.")
-                #?
-                # playback._play_with_simpleaudio(error_sound)
+            
+                playback._play_with_simpleaudio(error_sound)
                 continue
 
         case _:
             continue
         
 bad_endings = 0
-#?
-# playback._play_with_simpleaudio(endgame)
+playback._play_with_simpleaudio(endgame)
 print("Právě jsi získal všechny předměty potřebné k dokončení pentagramu.")
 print("Začneš připojením toho odpojeného počítače.")
 if endings[0] == "crowbar":
     bad_endings += 1
-    #?
-    # playback._play_with_simpleaudio(holy)
-    #?
-    # playback._play_with_simpleaudio(scary_sound)
+
+    playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(scary_sound)
     print("Právě připojuješ ten kabel a v tu chvíli se za tebou objeví Honza.")
     t.sleep(2)
     print("Zbije tě za to, že jsi mu zničil skříň a zese zmizí.")
@@ -1257,17 +1255,16 @@ if endings[0] == "crowbar":
 
 else:
     print("Připojíš ten kabel a v tu ránu se za tebou objeví Honza.")
-    #?
-    # playback._play_with_simpleaudio(holy)
-    #?
-    # playback._play_with_simpleaudio(scary_sound)
+
+    playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(scary_sound)
     t.sleep(2)
     print("Po chvilce ticha, ti pogratuluje k nalezení kabelu.")
     print("A také ti poděkuje za to, že jsi mu nezničil skříň.")
 
 t.sleep(2)
-#?
-# playback._play_with_simpleaudio(cink)
+playback._play_with_simpleaudio(cink)
 print("Petrova kapsa cinkne, jako povtrzení o připojení toho počítače.")
 print("Doufal jsi, že si ho zapojil správně a teď to máš i potvrzené.")
 
@@ -1277,12 +1274,12 @@ if endings[1] == "bad":
     print("""Zadáš přihlašovecí údaje:
             petr.kretschmer@tul.cz
             Heslo123""")
-    #?
-    # playback._play_with_simpleaudio(scary_music)
+
+    playback._play_with_simpleaudio(scary_sound)
     print("Ale už teď cítíš, že je něco špatně.")
     t.sleep(2)
-    #?
-    # playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(holy)
     print("A měl jsi pravdu, za tebou se zjeví Petr a hned se tě začne vyptávat kde jsi ty údaje vzal.")
     print("Ty mu povíš, že byly napsané na tabuli v učebně, ale on ti nevěří.")
     print("Za trest ho musíš odvést do Makra pro spoustu masa.")
@@ -1295,8 +1292,8 @@ else:
             .\\ul
             123456""")
     t.sleep(2)
-    #?
-    # playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(holy)
     print("Za tebou se zjeví Petr.")
     print("Požehná ti, aby jsi dosáhl svého cíle.")
     print("Ty ho poprosíš, jestli by tě nemohl pustit ven.")
@@ -1309,8 +1306,7 @@ print("Ty si ho rovnou zkopíruješ na flešku k LabView, aby jsi mohl nahrát n
 t.sleep(1)
 print("Rovnou poté ho otevřeš a spustíš.")
 t.sleep(1)
-#?
-# playback._play_with_simpleaudio(cink)
+playback._play_with_simpleaudio(cink)
 print("Petrova kapsa zase cinkne, jako povtrzení o připojení toho počítače.")
 
 print("Tak, teď nainstalovat to LabView, povzdechneš si.")
@@ -1323,12 +1319,12 @@ if endings[2] == "bad":
     t.sleep(1)
     print("Podařilo se ti stáhnout Malware, který byl schovaný v tom LabView")
     print("A zároveň cítíš, jak se za tebou někdo objevil.")
-    #?
-    # playback._play_with_simpleaudio(scary_sound)
+
+    playback._play_with_simpleaudio(scary_sound)
     print("Bojíš se otočit.")
     t.sleep(2)
-    #?
-    # playback._play_with_simpleaudio(holy)
+
+    playback._play_with_simpleaudio(holy)
     print("Zjevila se za tebou Lenka a začala na tebe křičet, kvůli tomu malvéru.")
     print("Ty se několikrát omluvíš a Lenka zase zmizí.")
 
@@ -1346,8 +1342,7 @@ else:
 
 print("Rovnou spustíš připravený soubor. A...")
 t.sleep(2)
-#?
-# playback._play_with_simpleaudio(cink)
+playback._play_with_simpleaudio(cink)
 print("Petrova kapsa zase cinkne.")
 
 print("Tak teď připojit tu Pepovu raketu.")
@@ -1357,8 +1352,7 @@ print("Tak ještě spustit ten program v LabView.")
 t.sleep(10)
 print("Po časovém úseku, který ti připadal jako věčnost, se podaří otevřít ten program v LabView.")
 t.sleep(1)
-#?
-# playback._play_with_simpleaudio(holy)
+playback._play_with_simpleaudio(holy)
 print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
 print("Ale než stačíš cokoliv říct, zmizí.")
 
@@ -1412,7 +1406,13 @@ else:
     print("TOHLE VŠECHNO BYL SEN !? Ti probleskne hlavou.")
     print("Najednou ses probral ve své posteli a venku pomalu vstává slunce.")
     print("Podíváš se na hodiny a zjistíš, že je ideální čas, aby jsi vstával a stihnul dnešní hodinu na Univerzitě.")
-
+t.sleep(5)
+end = t.time() - start
+end = str(round(end, 3))
+end = end.split(".")
+print("PS: zde jsou tvé statistiky.")
+print(f"Tato hra ti zabrala {end[0]} sekund a {end[1]} milisekund.")
+print(f"Získal si {bad_endings} ze 3.")
 t.sleep(5)
 os.system("CLS")
 print(""" 
