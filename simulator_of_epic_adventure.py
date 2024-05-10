@@ -1441,6 +1441,26 @@ t.sleep(1)
 print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
 print("Ale než stačíš cokoliv říct, zmizí.")
 
+if "Tetris" in endings:
+    print("Aha, tak ti jsi ještě našel Tetris?")
+    print("Tak to ti, jako autor, srdečně blahopřeji.")
+    print("Podařil se ti najít tajný konec.")
+    t.sleep(5)
+    print("Ale ty by jsi chtěl nějaký dárek, že?")
+    t.sleep(3)
+    print("Promiň, ale já ti takhle přes obrazovku nic dát nemohu.")
+    print("Ale jsi borec, že jsi ho našel.")
+    print("""
+ ____                     _                    _ _               
+/ ___|  ___  ___ _ __ ___| |_    ___ _ __   __| (_)_ __   __ _ _ 
+\___ \ / _ \/ __| '__/ _ \ __|  / _ \ '_ \ / _` | | '_ \ / _` (_)
+ ___) |  __/ (__| | |  __/ |_  |  __/ | | | (_| | | | | | (_| |_ 
+|____/ \___|\___|_|  \___|\__|  \___|_| |_|\__,_|_|_| |_|\__, (_)
+|  ___|__  _   _ _ __   __| |                            |___/   
+| |_ / _ \| | | | '_ \ / _` |                                    
+|  _| (_) | |_| | | | | (_| |                                    
+|_|  \___/ \__,_|_| |_|\__,_|                                    """)
+
 print("Tak teď ještě tu pojistku.")
 print("Jdeš ji tam rovnou zašroubovat.")
 t.sleep(1)
