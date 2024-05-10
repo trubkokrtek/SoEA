@@ -38,6 +38,7 @@ def gameover():
     #? organ = pd.AudioSegment.from_wav("./music/organ.wav")
     #? start_game = pd.AudioSegment.from_wav("./music/start.wav")
     #? gunshots = pd.AudioSegment.from_wav("./music/gun.wav")
+    #? endgame = pd.AudioSegment.from_wav("./music/endgame.wav")
 #? except:
     #? print("Nelze načíst hudbu, zkus to znovu, nebo použij verzi bez hudby")
     #? quit()
@@ -639,7 +640,7 @@ while True:
                         case "AP306":
                             print("Vstoupil jsi do místnosti a na tabuli je napsáno: ")
                             endings[1] = "bad"
-                            print("""jan.novak@tul.cz
+                            print("""petr.kretschmer@tul.cz
                                     Heslo123""")
                             print("Rovnou je vyzskoušíš na počítači na katedře.")
                             t.sleep(2)
@@ -1330,3 +1331,123 @@ while True:
 
         case _:
             continue
+        
+bad_endings = 0
+#? play(endgame)
+print("Právě jsi získal všechny předměty potřebné k dokončení pentagramu.")
+print("Začneš připojením toho odpojeného počítače.")
+if endings[0] == "crowbar":
+    bad_endings += 1
+    #? play(holy)
+    #? play(scary_sound)
+    print("Právě připojuješ ten kabel a v tu chvíli se za tebou objeví Honza.")
+    t.sleep(2)
+    print("Zbije tě za to, že jsi mu zničil skříň a zese zmizí.")
+    print("Zbil tě napůl k smrti a ty sis zapamatoval, že příště bys radši měl hledat klíče, než páčidla.")
+
+else:
+    print("Připojíš ten kabel a v tu ránu se za tebou objeví Honza.")
+    #? play(holy)
+    #? play(scary_sound)
+    t.sleep(2)
+    print("Po chvilce ticha, ti pogratuluje k nalezení kabelu.")
+    print("A také ti poděkuje za to, že jsi mu nezničil skříň.")
+
+t.sleep(2)
+#? play(cink)
+print("Petrova kapsa cinkne, jako povtrzení o připojení toho počítače.")
+print("Doufal jsi, že si ho zapojil správně a teď to máš i potvrzené.")
+
+print("Tak teď jdeš se zkusit přihlásit do toho počítače.")
+if endings[1] == "bad":
+    bad_endings += 1
+    print("""Zadáš přihlašovecí údaje:
+            petr.kretschmer@tul.cz
+            Heslo123""")
+    #? play(scary_music)
+    print("Ale už teď cítíš, že je něco špatně.")
+    t.sleep(2)
+    #? play(holy)
+    print("A měl jsi pravdu, za tebou se zjeví Petr a hned se tě začne vyptávat kde jsi ty údaje vzal.")
+    print("Ty mu povíš, že byly napsané na tabuli v učebně, ale on ti nevěří.")
+    print("Za trest ho musíš odvést do Makra pro spoustu masa.")
+    t.sleep(5)
+    print("Po dvou hodinách se konečně dostanete zpět na univerzitu, ale Petr tě tam nechá na pospas osudu.")
+    print("Ale aspoň jsi zůstal přihlášený.")
+
+else:
+    print("""Zadáš přihlašovecí údaje:
+            .\\ul
+            123456""")
+    t.sleep(2)
+    #? play(holy)
+    print("Za tebou se zjeví Petr.")
+    print("Požehná ti, aby jsi dosáhl svého cíle.")
+    print("Ty ho poprosíš, jestli by tě nemohl pustit ven.")
+    print("Ale on ti na to odvětí, že je jen halucinace a ty ho vidíš, jak se pomalu stává průhledným.")
+    print("Ty začneš tázat svojí vlastní existenci.")
+    t.sleep(2)
+
+print("Počítač se otevře a uprostřed plochy je soubor s názvem: \"Key.vi\"")
+print("Ty si ho rovnou zkopíruješ na flešku k LabView, aby jsi mohl nahrát na Pepovu raketu.")
+t.sleep(1)
+print("Rovnou poté ho otevřeš a spustíš.")
+t.sleep(1)
+#? play(cink)
+print("Petrova kapsa zase cinkne, jako povtrzení o připojení toho počítače.")
+
+print("Tak, teď nainstalovat to LabView, povzdechneš si.")
+if endings[2] == "bad":
+    bad_endings += 1
+    print("Jdeš instalovat to LabView.")
+    print("Je to ale divné, nechce to po tobě licenční klíč.")
+    t.sleep(10)
+    print("Po spoustách minut se ti podařilo nainstalovat LabView, ale to není jediné, co sis stáhnul.")
+    t.sleep(1)
+    print("Podařilo se ti stáhnout Malware, který byl schovaný v tom LabView")
+    print("A zároveň cítíš, jak se za tebou někdo objevil.")
+    #? play(scary_sound)
+    print("Bojíš se otočit.")
+    t.sleep(2)
+    #? play(holy)
+    print("Zjevila se za tebou Lenka a začala na tebe křičet, kvůli tomu malvéru.")
+    print("Ty se několikrát omluvíš a Lenka zase zmizí.")
+
+else:
+    print("Jdeš instalovat to LabView, ještěže tam je textový soubor s licenčním klíčem.")
+    t.sleep(10)
+    print("Po spoustách minut se ti podařilo nainstalovat LabView")
+    t.sleep(1)
+    print("Cítíš jak se za tebou někdo objevil.")
+    print("Bojíš se otočit.")
+    t.sleep(2)
+    print("Stojí tam Lenka a žehná ti do života.")
+    t.sleep(1)
+    print("Vyslechneš si její požehnání a ona zase zmizí.")
+
+print("Rovnou spustíš připravený soubor. A...")
+t.sleep(2)
+#? play(cink)
+print("Petrova kapsa zase cinkne.")
+print("Tak teď připojit tu Pepovu raketu.")
+t.sleep(4)
+print("Nebylo to tak těžké, jak sis myslil.")
+print("Tak ještě spustit ten program v LabView.")
+t.sleep(10)
+print("Po časovém úseku, který ti připadal jako věčnost, se podaří otevřít ten program v LabView.")
+t.sleep(1)
+#? play(holy)
+print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
+print("Ale než stačíě cokoliv říct, zmizí.")
+
+print("Tak teď ještě tu pojistku.")
+print("Jdeš ji tam rovnou zašroubovat.")
+t.sleep(1)
+print("Počítač se hned rozsvítí a ty jdeš spustit program.")
+t.sleep(3)
+print("Pár vteřin po otevřerní programu se začne ze serveru uprostřed linout oslňující záře.")
+t.sleep(2)
+os.system("CLS")
+print("Teď tam místo serveru leží ta karta, tak potřebná k útěku.")
+print("Okamžitě ji sebereš a běžíš k východu.")
+#TODO i like trains, dream END or is it?
