@@ -511,81 +511,87 @@ while True:
                         continue
                 
                 if answer == '4':
-                    match room:
-                        case "return":
-                            print("Radši se vrátíš do místnosti s pentagramem.")
-                            break
-                        
-                        case "AP311":
-                        
-                            playback._play_with_simpleaudio(scary_sound)
-                            print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
-                            print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
-                            print("Najednou nemůžeš dýchat a umíráš.")
-                            gameover()
+                    print("Jdeš doleva a vidíš zde několik místnosti, do kterých by ses chtěl podívat.")
+                    while True:
+                        print("Vidíš kolem sebe místnosti AP301 - AP310.")
+                        print("""Takže máš na výběr z možností: 
+                                    AP3xx - AP311 - AP320
+                                    return - Můžeš se také vrátit do mísntosti s pentagramem""")
+                        match room:
+                            case "return":
+                                print("Radši se vrátíš do místnosti s pentagramem.")
+                                break
+                            
+                            case "AP311":
+                            
+                                playback._play_with_simpleaudio(scary_sound)
+                                print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
+                                print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
+                                print("Najednou nemůžeš dýchat a umíráš.")
+                                gameover()
 
-                        case "AP312":
-                            print("Tato místnost je zamčená.")
-                        
-                        case "AP313":
-                            print("Vstoupil jsi do místnosti a na tabuli je napsáno: ")
-                            endings[1] = "good"
-                            print(""".\\ul
-                                    123456""")
-                            print("Rovnou je vyzskoušíš na počítači na katedře.")
-                            t.sleep(2)
-                            print("Po chvíli se počítač doopravdy odemkne.")
-                            print("To znamená, že si našel přihlašovací údaje k tomu počítači")
-                            room = "return"
-                            break
-                        
-                        case "AP314":
-                            print("Tato místnost je zamčená.")
+                            case "AP312":
+                                print("Tato místnost je zamčená.")
+                            
+                            case "AP313":
+                                print("Vstoupil jsi do místnosti a na tabuli je napsáno: ")
+                                endings[1] = "good"
+                                print(""".\\ul
+                                        123456""")
+                                print("Rovnou je vyzskoušíš na počítači na katedře.")
+                                t.sleep(2)
+                                print("Po chvíli se počítač doopravdy odemkne.")
+                                print("To znamená, že si našel přihlašovací údaje k tomu počítači")
+                                room = "return"
+                                break
+                            
+                            case "AP314":
+                                print("Tato místnost je zamčená.")
 
-                        case "AP315":
-                            print("Tato místnost je zamčená.")
+                            case "AP315":
+                                print("Tato místnost je zamčená.")
 
-                        case "AP316":
-                            print("Tato místnost je zamčená.")
+                            case "AP316":
+                                print("Tato místnost je zamčená.")
 
-                        case "AP317":
-                            print("Vejdeš do místnosti, ale na tabuli je napsaný nějaký pseudokód.")
-                            t.sleep(3)
-                            print("Po chvíli přemýšlení ti dojde, že to není pseudokód, ale JavaScript.")
-                            print("Ale to už je pozdě, už ti to vypálilo oči a ty umíráš s posledním pohledem na JavaScript.")
-                            gameover()
+                            case "AP317":
+                                print("Vejdeš do místnosti, ale na tabuli je napsaný nějaký pseudokód.")
+                                t.sleep(3)
+                                print("Po chvíli přemýšlení ti dojde, že to není pseudokód, ale JavaScript.")
+                                print("Ale to už je pozdě, už ti to vypálilo oči a ty umíráš s posledním pohledem na JavaScript.")
+                                gameover()
 
-                        case "AP318":
-                            print("Tato místnost je zamčená.")
+                            case "AP318":
+                                print("Tato místnost je zamčená.")
 
-                        case "AP319":
-                        
-                            playback._play_with_simpleaudio(scary_sound)
-                            print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
-                            print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
-                            print("Najednou nemůžeš dýchat a umíráš.")
-                            gameover()
+                            case "AP319":
+                            
+                                playback._play_with_simpleaudio(scary_sound)
+                                print("Vstoupíš do místnosti, máš nepříjemný pocit a tak se podíváš nahoru.")
+                                print("Nad tebou se otevře pytel a spadne na tebe aspoň pět kilo mouky.")
+                                print("Najednou nemůžeš dýchat a umíráš.")
+                                gameover()
 
-                        case "AP320":
-                        
-                            playback._play_with_simpleaudio(alarm)
-                            print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
-                            print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
-                            print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
-                        
-                            playback._play_with_simpleaudio(gunshots)
-                            t.sleep(3)
-                            print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
-                            print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
-                            print("Teď ho můžeš strašit, až do jeho smrti.")
-                            gameover()
-                        
-                        case _:
-                            room = "return"    
-                            print("Radši se vrátíš zpět po svých stopách.")
-                        
-                            playback._play_with_simpleaudio(error_sound)
-                            break
+                            case "AP320":
+                            
+                                playback._play_with_simpleaudio(alarm)
+                                print("Otevřeš dveře do místnosti a ihned se rozezní alarm.")
+                                print("Rychle se podíváš jestli nenajdeš přihlašovací údaje.")
+                                print("Už začneš utíkat pryč, ale zahlédla tě ochranka.")
+                            
+                                playback._play_with_simpleaudio(gunshots)
+                                t.sleep(3)
+                                print("Padlo několik výstřelů, doufáš že se netrefili, ale schytal jsi to přímo do srdce.")
+                                print("A to jenom proto, že ochranka si myslela, že zahlédla pistoli.")
+                                print("Teď ho můžeš strašit, až do jeho smrti.")
+                                gameover()
+                            
+                            case _:
+                                room = "return"    
+                                print("Radši se vrátíš zpět po svých stopách.")
+                            
+                                playback._play_with_simpleaudio(error_sound)
+                                break
                     
                     if room == "return":
                         continue
@@ -1278,7 +1284,7 @@ if endings[0] == "crowbar":
     playback._play_with_simpleaudio(holy)
     playback._play_with_simpleaudio(scary_sound)
     print("Právě připojuješ ten kabel a v tu chvíli se za tebou objeví Honza.")
-    t.sleep(2)
+    t.sleep(5)
     print("Zbije tě za to, že jsi mu zničil skříň a zese zmizí.")
     print("Zbil tě napůl k smrti a ty sis zapamatoval, že příště bys radši měl hledat klíče, než páčidla.")
 
@@ -1288,11 +1294,11 @@ else:
     playback._play_with_simpleaudio(holy)
 
     playback._play_with_simpleaudio(scary_sound)
-    t.sleep(2)
+    t.sleep(5)
     print("Po chvilce ticha, ti pogratuluje k nalezení kabelu.")
     print("A také ti poděkuje za to, že jsi mu nezničil skříň.")
 
-t.sleep(2)
+t.sleep(5)
 playback._play_with_simpleaudio(cink)
 print("Petrova kapsa cinkne, jako povtrzení o připojení toho počítače.")
 print("Doufal jsi, že si ho zapojil správně a teď to máš i potvrzené.")
@@ -1306,13 +1312,13 @@ if endings[1] == "bad":
 
     playback._play_with_simpleaudio(scary_sound)
     print("Ale už teď cítíš, že je něco špatně.")
-    t.sleep(2)
+    t.sleep(5)
 
     playback._play_with_simpleaudio(holy)
     print("A měl jsi pravdu, za tebou se zjeví Petr a hned se tě začne vyptávat kde jsi ty údaje vzal.")
     print("Ty mu povíš, že byly napsané na tabuli v učebně, ale on ti nevěří.")
     print("Za trest ho musíš odvést do Makra pro spoustu masa.")
-    t.sleep(5)
+    t.sleep(8)
     print("Po dvou hodinách se konečně dostanete zpět na univerzitu, ale Petr tě tam nechá na pospas osudu.")
     print("Ale aspoň jsi zůstal přihlášený.")
 
@@ -1320,7 +1326,7 @@ else:
     print("""Zadáš přihlašovecí údaje:
             .\\ul
             123456""")
-    t.sleep(2)
+    t.sleep(5)
 
     playback._play_with_simpleaudio(holy)
     print("Za tebou se zjeví Petr.")
@@ -1328,7 +1334,7 @@ else:
     print("Ty ho poprosíš, jestli by tě nemohl pustit ven.")
     print("Ale on ti na to odvětí, že je jen halucinace a ty ho vidíš, jak se pomalu stává průhledným.")
     print("Ty začneš tázat svojí vlastní existenci.")
-    t.sleep(2)
+    t.sleep(5)
 
 print("Počítač se otevře a uprostřed plochy je soubor s názvem: \"Key.vi\"")
 print("Ty si ho rovnou zkopíruješ na flešku k LabView, aby jsi mohl nahrát na Pepovu raketu.")
@@ -1345,13 +1351,13 @@ if endings[2] == "bad":
     print("Je to ale divné, nechce to po tobě licenční klíč.")
     t.sleep(10)
     print("Po spoustách minut se ti podařilo nainstalovat LabView, ale to není jediné, co sis stáhnul.")
-    t.sleep(1)
+    t.sleep(5)
     print("Podařilo se ti stáhnout Malware, který byl schovaný v tom LabView")
     print("A zároveň cítíš, jak se za tebou někdo objevil.")
 
     playback._play_with_simpleaudio(scary_sound)
     print("Bojíš se otočit.")
-    t.sleep(2)
+    t.sleep(5)
 
     playback._play_with_simpleaudio(holy)
     print("Zjevila se za tebou Lenka a začala na tebe křičet, kvůli tomu malvéru.")
@@ -1361,16 +1367,16 @@ else:
     print("Jdeš instalovat to LabView, ještěže tam je textový soubor s licenčním klíčem.")
     t.sleep(10)
     print("Po spoustách minut se ti podařilo nainstalovat LabView")
-    t.sleep(1)
+    t.sleep(5)
     print("Cítíš jak se za tebou někdo objevil.")
     print("Bojíš se otočit.")
-    t.sleep(2)
+    t.sleep(6)
     print("Stojí tam Lenka a žehná ti do života.")
-    t.sleep(1)
+    t.sleep(5)
     print("Vyslechneš si její požehnání a ona zase zmizí.")
 
 print("Rovnou spustíš připravený soubor. A...")
-t.sleep(2)
+t.sleep(4)
 playback._play_with_simpleaudio(cink)
 print("Petrova kapsa zase cinkne.")
 
@@ -1394,7 +1400,7 @@ print("Nebylo to tak těžké, jak sis myslil.")
 print("Tak ještě spustit ten program v LabView.")
 t.sleep(10)
 print("Po časovém úseku, který ti připadal jako věčnost, se podaří otevřít ten program v LabView.")
-t.sleep(1)
+t.sleep(4)
 playback._play_with_simpleaudio(holy)
 print("A v ten moment se zjeví Pepa a přeje ti hodně štěstí do života.")
 print("Ale než stačíš cokoliv říct, zmizí.")
@@ -1466,7 +1472,7 @@ end = str(round(end, 3))
 end = end.split(".")
 print("PS: zde jsou tvé statistiky.")
 print(f"Tato hra ti zabrala {end[0]} sekund a {end[1]} milisekund.")
-print(f"Získal si {bad_endings} ze 3.")
+print(f"Získal si {bad_endings} ze 3 špatných konců.")
 t.sleep(5)
 os.system("CLS")
 print(""" 
